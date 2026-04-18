@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}Home – OrgVein{% endblock %}
+
+{% block full_width %}
+<!-- Hero — full width, outside container -->
+<section class="hero-section text-center text-white">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="badge mb-3" style="background:#e6a817;color:#0a2a2a;font-size:.8rem;letter-spacing:.1em;">BUSINESS CONSULTING</span>
+        <h1 class="hero-title fw-bold">Business Systems &amp; Growth <br>Consulting for SMEs</h1>
+        <p class="hero-sub fst-italic">Build Structure. Drive Growth. Scale with Clarity.</p>
+        <p class="hero-desc mx-auto">
+            Most businesses don't fail because of lack of demand they fail because growth outpaces structure.
+            At Orgvein, we help SMEs, startups, and growing companies build scalable systems, structured operations,
+            and high-performance organizations.
+        </p>
+        <p class="hero-architect">We are not consultants we are business architects.</p>
+        <a href="#contact" class="btn hero-btn mt-2">Start Your Business Diagnosis Today</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<!-- What We Do -->
+<section class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 mb-3">What We Do</h2>
+    <p>8 Pillars of Transformation</p>
+
+    <div class="row g-3">
+        {% for service in services %}
+        <div class="col-md-3 col-sm-6">
+            <div class="card h-100 border-0 p-4 text-center shadow-sm rounded-4">
+                <div class="mb-3">
+                    <i class="bi {{ service.icon }} fs-2 icon-main"></i>
+                </div>
+                <p class="mb-0 fw-semibold">{{ service.name }}</p>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Problem -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Content -->
+            <div class="col-lg-5">
+                <h2 class="fw-bold mb-3">The Problem We Solve</h2>
+                <p class="text-muted">
+                    As your business grows, complexity increases and systems start to break.
+                </p>
+
+                <p class="fw-semibold mt-4">
+                    We bring <span class="text-success">clarity, structure, and flow</span> back to your organization.
+                </p>
+            </div>
+            <!-- Right Items -->
+            <div class="col-lg-7">
+                <div class="problem-list">
+
+                    <div class="problem-item">
+                        <i class="bi bi-people"></i>
+                        <span>Teams become misaligned</span>
+                    </div>
+
+                    <div class="problem-item">
+                        <i class="bi bi-graph-down"></i>
+                        <span>Sales become unpredictable</span>
+                    </div>
+
+                    <div class="problem-item">
+                        <i class="bi bi-diagram-3"></i>
+                        <span>Processes break down</span>
+                    </div>
+
+                    <div class="problem-item">
+                        <i class="bi bi-exclamation-circle"></i>
+                        <span>Operations become chaotic</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Methodology -->
+<section class="methodology-modern">
+
+    <h2 class="fw-bold text-center mb-2">Our Methodology</h2>
+    <p class="text-muted text-center mb-5">The 7-D Framework</p>
+
+    <div class="methodology-wrapper">
+
+        <!-- PREVIOUS CARD -->
+        <div class="side-card prev">
+            <span class="step-num">07</span>
+            <p>Deconstruct</p>
+        </div>
+
+        <!-- MAIN CARD -->
+        <div class="main-card text-center">
+            <div class="step-number">01</div>
+            <h3 class="step-title"> </h3>
+        </div>
+
+        <!-- NEXT CARD -->
+        <div class="side-card next">
+            <span class="step-num">02</span>
+            <p>{{ methodology.1 }}</p>
+        </div>
+
+        <div style="display:none;">
+            {% for step in methodology %}
+                <div class="methodology-step-data" data-step="{{ step }}"></div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div class="traits-row mt-5">
+        {% for trait in methodology_traits %}
+        <div class="trait-pill">{{ trait }}</div>
+        {% endfor %}
+    </div>
+
+</section>
+
+<!-- Who We Help -->
+<section class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 mb-3">Who We Help</h2>
+    <div class="row g-2">
+        {% for who in who_we_help %}
+        <div class="col-md-6">
+            <div class="d-flex align-items-center gap-2 bg-light rounded p-2">
+                <span class="text-success">&#9679;</span> {{ who }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <p class="mt-3 text-muted">Especially businesses with <strong>10–200 employees</strong> facing growth challenges.</p>
+</section>
+
+<!-- Results -->
+<section class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 mb-3">Results You Can Expect</h2>
+    <div class="row g-3">
+        {% for result in results %}
+        <div class="col-md-4 col-sm-6">
+            <div class="bg-light rounded p-3 text-center">
+                <div class="text-success mb-1">&#10003;</div>
+                {{ result }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-light rounded p-5 text-center mb-4" id="contact">
+    <h2 class="fw-bold">Start Your Business Diagnosis Today</h2>
+    <p class="text-muted mt-2">Get clarity on what's holding your business back.</p>
+    <a href="#" class="btn cta-btn px-5 mt-2"></a>
+</section>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% load static %}
+<footer style="background:#0a2a2a; color:#fff; padding:3rem 0 0;">
+    <div class="container">
+        <div class="row g-4 pb-4">
+
+            <!-- Brand column -->
+            <div class="col-md-5">
+                <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="{% static 'img/hero2.png' %}" alt="OrgVein" height="55">
+                    <div>
+                        <div style="font-size:1.4rem;font-weight:800;letter-spacing:.05em;">
+                            <span style="color:#fff;">ORG</span><span style="color:#e6a817;">VEIN</span>
+                        </div>
+                        <div style="font-size:.7rem;letter-spacing:.2em;color:#7a9a9a;">CLARITY &middot; STRUCTURE &middot; FLOW</div>
+                    </div>
+                </div>
+                <p style="font-size:.88rem;color:#7a9a9a;line-height:1.7;margin-top:1rem;max-width:320px;">
+                    Orgvein is a multi-disciplinary business transformation company. We help organisations build skilled teams and scalable systems.
+                </p>
+            </div>
+
+            <!-- Spacer -->
+            <div class="col-md-2"></div>
+
+            <!-- Navigation column -->
+            <div class="col-md-2">
+                <div style="font-size:.75rem;font-weight:700;letter-spacing:.15em;color:#fff;margin-bottom:1.25rem;">
+                    NAVIGATION<span style="color:#e6a817;margin-left:2px;">|</span>
+                </div>
+                <ul class="list-unstyled" style="display:flex;flex-direction:column;gap:.75rem;">
+                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;">About Us</a></li>
+                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;">What We Do</a></li>
+                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;">Our Process</a></li>
+                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect column -->
+            <div class="col-md-3">
+                <div style="font-size:.75rem;font-weight:700;letter-spacing:.15em;color:#fff;margin-bottom:1.25rem;">
+                    CONNECT<span style="color:#e6a817;margin-left:2px;">|</span>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="#" style="width:38px;height:38px;border-radius:50%;background:#1a3a3a;display:flex;align-items:center;justify-content:center;color:#7a9a9a;text-decoration:none;font-size:.8rem;">in</a>
+                    <a href="#" style="width:38px;height:38px;border-radius:50%;background:#1a3a3a;display:flex;align-items:center;justify-content:center;color:#7a9a9a;text-decoration:none;font-size:.8rem;">tw</a>
+                    <a href="#" style="width:38px;height:38px;border-radius:50%;background:#1a3a3a;display:flex;align-items:center;justify-content:center;color:#7a9a9a;text-decoration:none;font-size:.8rem;">ig</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom bar -->
+        <div style="border-top:1px solid #1a3a3a;padding:1.25rem 0;">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span style="font-size:.72rem;letter-spacing:.1em;color:#4a6a6a;">
+                    &copy; {% now "Y" %} ORGVEIN PVT LTD. ALL RIGHTS RESERVED.
+                </span>
+                <div class="d-flex gap-4">
+                    <a href="#" style="font-size:.72rem;letter-spacing:.1em;color:#4a6a6a;text-decoration:none;">PRIVACY POLICY</a>
+                    <a href="#" style="font-size:.72rem;letter-spacing:.1em;color:#4a6a6a;text-decoration:none;">TERMS OF SERVICE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
