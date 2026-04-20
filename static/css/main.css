@@ -1,10 +1,11 @@
 /* OrgVein custom styles — Bootstrap handles the rest */
 
+/* ====== ROOT VARIABLES ========= */
 :root {
     --orgvein-green: #1a6b4a;
 }
 
-/* Make hero section full viewport height */
+/* ======= HERO SECTION ======= */
 .hero {
     min-height: calc(100vh - 120px);
     display: flex;
@@ -13,38 +14,6 @@
     align-items: center;
 }
 
-/* ── About Stats ── */
-.about-stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-.about-more-btn {
-    background: var(--green-dark);
-    color: black;
-    font-weight: 600;
-    padding: .6rem 1.5rem;
-    border-radius: 6px;
-    transition: background .2s;
-}
-.about-more-btn:hover { background: var(--green-mid); color: #fff; }
-.about-img {
-    max-width: 80%;
-    border-radius: 30px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    transition: transform 0.9s ease;
-}
-
-.about-img:hover {
-    transform: scale(1.03);
-}
-
-.methodology-step:hover {
-    background: #E1F5EE;
-    transition: background 0.4s;
-}
-
-/* Hero */
 .hero-section {
     position: relative;
     min-height: 100vh;
@@ -121,7 +90,33 @@
     color: #0a2a2a;
 }
 
-/* Service Cards - New Style */
+/* ===== About Stats ======== */
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.about-more-btn {
+    background: var(--green-dark);
+    color: black;
+    font-weight: 600;
+    padding: .6rem 1.5rem;
+    border-radius: 6px;
+    transition: background .2s;
+}
+.about-more-btn:hover { background: var(--green-mid); color: #fff; }
+.about-img {
+    max-width: 80%;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    transition: transform 0.9s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.03);
+}
+
+/* ============ Service Cards =======*/
 .card {
     background-color: #f5f1ec;
     border-radius: 20px;
@@ -158,9 +153,16 @@
     font-size: 1rem;
 }
 
+/* ======== methodology ========== */
+
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
+}
+
+.methodology-step:hover {
+    background: #E1F5EE;
+    transition: background 0.4s;
 }
 
 .methodology-step:hover {
@@ -289,7 +291,7 @@
     filter: blur(2px);
 }
 
-/* ── Testimonials ── */
+/* ========= Testimonials ========== */
 .testimonial-card {
     background: #f5f1ec;
     border: 1.5px solid var(--border);
@@ -305,3 +307,167 @@
 .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--green-light); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--green-mid); font-size: 1rem; }
 .author-name { font-weight: 700; font-size: .9rem; color: var(--green-dark); }
 .author-company { font-size: .8rem; color: var(--text-muted); }
+
+/* ========= FAQ ============= */
+.faq-main-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--green-dark);
+    line-height: 1.2;
+}
+
+.faq-accordion { border-top: 1px solid #e0e0e0; }
+
+.faq-item {
+    border: none !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    border-radius: 0 !important;
+    background: transparent;
+}
+
+.faq-btn {
+    background: transparent !important;
+    color: #1c1c1c !important;
+    font-size: .95rem;
+    font-weight: 500;
+    padding: 1.25rem 0;
+    box-shadow: none !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.faq-btn::after { display: none; } /* remove bootstrap arrow */
+
+.faq-icon {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #555;
+    flex-shrink: 0;
+    transition: transform .3s;
+}
+
+.faq-btn:not(.collapsed) .faq-icon {
+    transform: rotate(45deg);
+    color: var(--green-mid);
+}
+
+.faq-answer {
+    font-size: .9rem;
+    color: #555;
+    line-height: 1.7;
+    padding: 0 0 1.25rem 0;
+    background: transparent;
+}
+
+/* ======= CTA =========== */
+
+.cta-section {
+    background: #f9fafb;
+    padding: 80px 0;
+}
+
+/* LEFT SIDE */
+.cta-section h2 {
+    font-size: 2.2rem;
+    color: #0a2a2a;
+}
+
+.cta-section p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.cta-btn {
+    background: #e6a817;
+    color: #0a2a2a;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #d49a14;
+    transform: translateY(-2px);
+}
+
+/* RIGHT SIDE CARD */
+.diagnosis-form-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-card-title {
+    font-weight: 700;
+    color: #0a2a2a;
+}
+
+.form-card-sub {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+/* FORM FIELDS */
+.form-label-custom {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-input-custom {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e3e6ea;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.25s ease;
+    background: #fff;
+}
+
+/* Select */
+.form-select-custom {
+    appearance: none;
+}
+
+/* Focus effect */
+.form-input-custom:focus {
+    border-color: #e6a817;
+    box-shadow: 0 0 0 2px rgba(230,168,23,0.15);
+    outline: none;
+}
+
+/* SUBMIT BUTTON */
+.form-submit-btn {
+    background: #0a2a2a;
+    color: #fff;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form-submit-btn:hover {
+    background: #062020;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .cta-section {
+        text-align: center;
+    }
+
+    .cta-section .row {
+        flex-direction: column;
+    }
+
+    .diagnosis-form-card {
+        margin-top: 20px;
+    }
+}

@@ -18,7 +18,6 @@
             and sustainable growth.
         </p>
         <a href="#contact" class="btn hero-btn mt-2">Start Your Business Diagnosis</a>
-        <a href="#contact" class="btn hero-btn mt-2">Request a Consultation</a>
     </div>
 </section>
 {% endblock %}
@@ -144,11 +143,127 @@
     </div>
 </section>
 
-<!-- CTA -->
-<section class="bg-light rounded p-5 text-center mb-4" id="contact">
-    <h2 class="fw-bold">Start Your Business Diagnosis Today</h2>
-    <p class="text-muted mt-2">Get clarity on what's holding your business back.</p>
-    <a href="#" class="btn cta-btn px-5 mt-2"></a>
+<!-- ── FAQ ── -->
+<section class="faq-section py-5 mb-4" id="faq">
+    <div class="row g-5">
+
+        <!-- Left — Title -->
+        <div class="col-lg-4">
+            <span class="section-label">
+                <i class="bi bi-caret-right-fill me-1" style="color:var(--gold);"></i>FAQ SECTION
+            </span>
+            <h2 class="faq-main-title mt-2">Have more questions? we've answers</h2>
+        </div>
+
+        <!-- Right — Accordion -->
+        <div class="col-lg-8">
+            <div class="accordion faq-accordion" id="faqAccordion">
+                {% for question, answer in faqs %}
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed faq-btn"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq{{ forloop.counter }}">
+                            {{ question }}
+                            <span class="faq-icon">+</span>
+                        </button>
+                    </h2>
+                    <div id="faq{{ forloop.counter }}"
+                         class="accordion-collapse collapse"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-answer">{{ answer }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section py-5 mb-2" id="diagnosis">
+    <div class="row g-5 align-items-center">
+
+        <!-- Left — Content -->
+        <div class="col-lg-5">
+            <h2 class="fw-bold">Start Your Business Diagnosis Today</h2>
+            <p class="text-muted mt-2">Get clarity on what's holding your business back.</p>
+        </div>
+
+        <!-- Right — Form -->
+        <div class="col-lg-7">
+            <div class="diagnosis-form-card" id="formContainer">
+                <h3 class="form-card-title">Schedule Diagnostic</h3>
+                <p class="form-card-sub">Book a free strategy session with our experts.</p>
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success mb-3">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <form method="post" id="diagnosisForm">
+                    {% csrf_token %}
+
+                    <!-- Full Name -->
+                    <div class="form-group-custom mb-3">
+                        <label class="form-label-custom">FULL NAME</label>
+                        <input type="text" name="full_name" class="form-input-custom"
+                               placeholder="Your full name" required
+                               value="{{ diagnosis_form.full_name.value|default:'' }}" />
+                    </div>
+
+                    <!-- Phone + Email -->
+                    <div class="row g-3 mb-3">
+                        <div class="col-6">
+                            <label class="form-label-custom">PHONE</label>
+                            <input type="tel" name="phone" class="form-input-custom"
+                                   placeholder="+91 ..."
+                                   value="{{ diagnosis_form.phone.value|default:'' }}" />
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label-custom">EMAIL</label>
+                            <input type="email" name="email" class="form-input-custom"
+                                   placeholder="you@company.com" required
+                                   value="{{ diagnosis_form.email.value|default:'' }}" />
+                        </div>
+                    </div>
+
+                    <!-- Service -->
+                    <div class="form-group-custom mb-4">
+                        <label class="form-label-custom">AREA OF INTEREST</label>
+                        <select name="service" class="form-input-custom form-select-custom" required>
+                            <option value="" disabled selected>Select a Service...</option>
+                            <option>Business Consulting & Strategy</option>
+                            <option>HR & Workforce Solutions</option>
+                            <option>Accounts & Financial Governance</option>
+                            <option>Operations Management</option>
+                            <option>Sales Systems & Enablement</option>
+                            <option>Marketing Systems & Demand Gen</option>
+                            <option>IT & Technology Solutions</option>
+                            <option>Training & Development</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-custom mb-4">
+                        <label class="form-label-custom">MESSAGE <span style="color:#aaa;font-weight:400;letter-spacing:0;">(Optional)</span></label>
+                        <textarea name="message" class="form-input-custom"
+                                  placeholder="Tell us about your business challenge..."
+                                  rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn form-submit-btn w-100">
+                        Start Your Business <i class="bi bi-arrow-right ms-1"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 {% endblock %}

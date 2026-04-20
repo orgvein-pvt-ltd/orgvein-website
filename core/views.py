@@ -1,4 +1,7 @@
 from django.views.generic import TemplateView
+from django.shortcuts import redirect
+from django.contrib import messages
+from .forms import DiagnosisForm
 
 
 class HomeView(TemplateView):
@@ -6,6 +9,8 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['diagnosis_form'] = kwargs.get('form', DiagnosisForm())
+
         context['services'] = [
             {"name": "Business Consulting & Strategy", "icon": "bi-briefcase"},
             {"name": "Sales System Development", "icon": "bi-graph-up-arrow"},
@@ -56,4 +61,32 @@ class HomeView(TemplateView):
                 'company': 'Regional Business',
             },
         ]
+        context['faqs'] = [
+            ('What does business architecture include?',
+             'It involves structuring your organization, defining roles, processes, and decision systems for better clarity and scalability.'),
+            ('How do HR systems improve business performance?',
+             'They standardize hiring, onboarding, and performance management, ensuring consistent workforce productivity.'),
+            ('What is a sales system?',
+             'A structured framework that manages leads, pipelines, and conversions to create predictable revenue.'),
+            ('How are marketing systems different from campaigns?',
+             'Marketing systems focus on long-term lead generation frameworks rather than one-time campaign execution.'),
+            ('What are IT & ERP solutions used for?',
+             'They integrate business functions, automate workflows, and provide real-time data visibility.'),
+            ('How does operations management improve efficiency?',
+             'It streamlines workflows, reduces bottlenecks, and ensures consistent execution across teams.'),
+            ('Why is accounting and compliance important?',
+             'It ensures financial clarity, risk management, and adherence to regulatory requirements.'),
+            ('What is capability development in organizations?',
+             'It focuses on training and upskilling teams to align with systems and improve performance.'),
+        ]
         return context
+
+    def post(self, request, *args, **kwargs):
+        form = DiagnosisForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you! We'll be in touch shortly.")
+            return self.render_to_response(
+                self.get_context_data(form=DiagnosisForm())
+            )
+        return self.render_to_response(self.get_context_data(form=form))
