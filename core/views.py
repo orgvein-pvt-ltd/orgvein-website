@@ -23,19 +23,26 @@ class HomeView(TemplateView):
         ]
         context['methodology'] = [
             {'num': '01', 'title': 'Diagnose',
-             'desc': 'Identify gaps, inefficiencies, and structural issues.'},
+             'desc': 'Identify gaps, inefficiencies, and structural issues.',
+             'image': 'img/methodology/diaganose.jpeg'},
             {'num': '02', 'title': 'Design',
-             'desc': 'Create tailored business architecture and system frameworks.'},
+             'desc': 'Create tailored business architecture and system frameworks.',
+             'image': 'img/methodology/design.jpeg'},
             {'num': '03', 'title': 'Develop',
-             'desc': 'Build processes, tools, and operational models.'},
+             'desc': 'Build processes, tools, and operational models.',
+             'image': 'img/methodology/develop.jpeg'},
             {'num': '04', 'title': 'Deploy',
-             'desc': 'Implement systems across departments.'},
+             'desc': 'Implement systems across departments.',
+             'image': 'img/methodology/deploy.jpeg'},
             {'num': '05', 'title': 'Direct',
-             'desc': 'Guide leadership teams on execution and alignment.'},
+             'desc': 'Guide leadership teams on execution and alignment.',
+             'image': 'img/methodology/direct.jpeg'},
             {'num': '06', 'title': 'Drive',
-             'desc': 'Monitor performance and optimize outcomes.'},
+             'desc': 'Monitor performance and optimize outcomes.',
+             'image': 'img/methodology/drive.jpeg'},
             {'num': '07', 'title': 'Deconstruct',
-             'desc': 'Continuously refine systems for long-term scalability.'},
+             'desc': 'Continuously refine systems for long-term scalability.',
+             'image': 'img/methodology/decon.jpeg'},
         ]
         context['methodology_traits'] = [
             'Data-driven', 'Customized', 'Measurable', 'Sustainable'

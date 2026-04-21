@@ -5,6 +5,10 @@
     --orgvein-green: #1a6b4a;
 }
 
+* {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 /* ======= HERO SECTION ======= */
 .hero {
     min-height: calc(100vh - 120px);
@@ -116,6 +120,27 @@
     transform: scale(1.03);
 }
 
+.about-animate-left,
+.about-animate-right {
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease;
+}
+
+.about-animate-left {
+    transform: translateX(80px);
+}
+
+.about-animate-right {
+    transform: translateX(-80px);
+    transition-delay: 0.1s;
+}
+
+.about-animate-left.is-visible,
+.about-animate-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* ============ Service Cards =======*/
 .card {
     background-color: #f5f1ec;
@@ -186,9 +211,9 @@
 .side-card {
     position: absolute;
     width: 320px;
-    height: 140px;
+    height: 200px;
     border-radius: 20px;
-    background: #F0E6CA;
+    background: #3E8545;
     opacity: 0.6;
     display: flex;
     flex-direction: column;
@@ -211,12 +236,12 @@
 
 /* LEFT */
 .side-card.prev {
-    transform: translateX(-200px) scale(0.9) rotate(-6deg);
+    transform: translateX(-80%) scale(0.9) rotate(-6deg);
 }
 
 /* RIGHT */
 .side-card.next {
-    transform: translateX(200px) scale(0.9) rotate(6deg);
+    transform: translateX(80%) scale(0.9) rotate(6deg);
 }
 
 /* MAIN */
@@ -225,9 +250,24 @@
     width: 420px;
     padding: 40px;
     border-radius: 20px;
-    background: var(--orgvein-green);
-    backdrop-filter: blur(10px);
+    background-position: center;
+    background-repeat: no-repeat;
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+    transition: transform 1s ease, opacity 1s ease;
+}
+.main-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(19, 45, 31, 0.55);
+    border-radius: 20px;
+    z-index: 0;
+}
+.main-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .step-number {
@@ -238,13 +278,13 @@
 
 .step-title {
     font-weight: 700;
-    color: #132D1F;
+    color: #ffffff;
     margin-top: 10px;
 }
 
 .step-desc {
     font-size: 0.9rem;
-    color: #132D1F;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .traits-row {
@@ -309,6 +349,11 @@
 .author-company { font-size: .8rem; color: var(--text-muted); }
 
 /* ========= FAQ ============= */
+
+.faq-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 .faq-main-title {
     font-size: 2.4rem;
     font-weight: 800;
@@ -338,7 +383,7 @@
     gap: 1rem;
 }
 
-.faq-btn::after { display: none; } /* remove bootstrap arrow */
+.faq-btn::after { display: none; }
 
 .faq-icon {
     font-size: 1.3rem;
@@ -365,7 +410,7 @@
 
 .cta-section {
     background: #f9fafb;
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 /* LEFT SIDE */
@@ -394,7 +439,7 @@
 
 /* RIGHT SIDE CARD */
 .diagnosis-form-card {
-    background: #ffffff;
+    background: #f5f1ec;
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -470,4 +515,63 @@
     .diagnosis-form-card {
         margin-top: 20px;
     }
+}
+/* CONTACT BLOCK */
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-right: 15px;
+}
+
+.contact-icon.light {
+    background: #f3f4f6;
+    color: #c89b3c;
+}
+
+.contact-icon.dark {
+    background: #0a2a2a;
+    color: #fff;
+}
+
+.contact-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+/* PHONE CARDS */
+.contact-card {
+    background: #f8f9fa;
+    border: 1px solid #e3e6ea;
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    display: inline-block;
+    min-width: 220px;
+}
+
+.contact-card small {
+    display: block;
+    font-size: 0.7rem;
+    color: #8a94a6;
+    letter-spacing: 0.08em;
+}
+
+.contact-card strong {
+    font-size: 1.05rem;
+    color: #0a2a2a;
+}
+
+/* EMAIL */
+.contact-email {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0a2a2a;
+    line-height: 1.4;
 }

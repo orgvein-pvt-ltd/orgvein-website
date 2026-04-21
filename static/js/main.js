@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const steps = Array.from(stepElements).map(el => ({
         num: el.dataset.num,
         title: el.dataset.title,
-        desc: el.dataset.desc
+        desc: el.dataset.desc,
+        image: el.dataset.image
     }));
 
     let index = 0;
@@ -43,14 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
         title.innerText = current.title;
         number.innerText = current.num;
         desc.innerText = current.desc;
+        mainCard.style.backgroundImage = `url('${current.image}')`;
+        mainCard.style.backgroundSize = 'cover';
+        mainCard.style.backgroundPosition = 'center';
 
         // PREV
         prevCard.querySelector('p').innerText = prev.title;
         prevCard.querySelector('.step-num').innerText = prev.num;
+        prevCard.style.backgroundImage = `url('${prev.image}')`;
+        prevCard.style.backgroundSize = 'cover';
+        prevCard.style.backgroundPosition = 'center';
 
         // NEXT
         nextCard.querySelector('p').innerText = next.title;
         nextCard.querySelector('.step-num').innerText = next.num;
+        nextCard.style.backgroundImage = `url('${next.image}')`;
+        nextCard.style.backgroundSize = 'cover';
+        nextCard.style.backgroundPosition = 'center';
     }
 
     function animateSlide() {
@@ -88,5 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Auto loop
     setInterval(animateSlide, 2500);
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.about-animate-left, .about-animate-right')
+        .forEach(el => observer.observe(el));
 
 });

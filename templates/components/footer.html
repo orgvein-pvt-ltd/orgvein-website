@@ -3,47 +3,79 @@
     <div class="container">
         <div class="row g-4 pb-4">
 
-            <!-- Brand column -->
-            <div class="col-md-5">
-                <div class="d-flex align-items-center gap-3 mb-2">
+            <!-- Col 1: Brand / Company -->
+            <div class="col-md-3">
+                <div class="d-flex align-items-center gap-3 mb-3">
                     <img src="{% static 'img/hero2.png' %}" alt="OrgVein" height="55">
                     <div>
-                        <div style="font-size:1.4rem;font-weight:800;letter-spacing:.05em;">
-                            <span style="color:#fff;">ORG</span><span style="color:#e6a817;">VEIN</span>
-                        </div>
+                        <div style="font-size:1.4rem;font-weight:800;letter-spacing:.05em;color:#fff;">ORGVEIN</div>
                         <div style="font-size:.7rem;letter-spacing:.2em;color:#7a9a9a;">CLARITY &middot; STRUCTURE &middot; FLOW</div>
                     </div>
                 </div>
-                <p style="font-size:.88rem;color:#7a9a9a;line-height:1.7;margin-top:1rem;max-width:320px;">
-                    Orgvein is a multi-disciplinary business transformation company. We help organisations build skilled teams and scalable systems.
+                <p style="font-size:.82rem;color:#7a9a9a;line-height:1.7;margin:0;">
+                    We bring clarity, structure, and flow to organisations through thoughtful systems and strategy.
                 </p>
             </div>
+            <div class="col-md-1"></div>
 
-            <!-- Spacer -->
-            <div class="col-md-2"></div>
-
-            <!-- Navigation column -->
+            <!-- Col 2: Navigation -->
             <div class="col-md-2">
                 <div style="font-size:.75rem;font-weight:700;letter-spacing:.15em;color:#fff;margin-bottom:1.25rem;">
                     NAVIGATION<span style="color:#e6a817;margin-left:2px;">|</span>
                 </div>
-                <ul class="list-unstyled" style="display:flex;flex-direction:column;gap:.75rem;">
-                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;">About Us</a></li>
-                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;">What We Do</a></li>
-                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;">Our Process</a></li>
-                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;">Blog</a></li>
+                <ul class="list-unstyled" style="display:flex;flex-direction:column;gap:.75rem;margin:0;">
+                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;" onmouseover="this.style.color='#e6a817'" onmouseout="this.style.color='#7a9a9a'">About Us</a></li>
+                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;" onmouseover="this.style.color='#e6a817'" onmouseout="this.style.color='#7a9a9a'">What We Do</a></li>
+                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;" onmouseover="this.style.color='#e6a817'" onmouseout="this.style.color='#7a9a9a'">Our Process</a></li>
+                    <li><a href="#" style="color:#7a9a9a;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;" onmouseover="this.style.color='#e6a817'" onmouseout="this.style.color='#7a9a9a'">Blog</a></li>
                 </ul>
             </div>
 
-            <!-- Connect column -->
-            <div class="col-md-3">
+            <!-- Col 3: Connect / Social -->
+            <div class="col-md-2">
                 <div style="font-size:.75rem;font-weight:700;letter-spacing:.15em;color:#fff;margin-bottom:1.25rem;">
                     CONNECT<span style="color:#e6a817;margin-left:2px;">|</span>
                 </div>
-                <div class="d-flex gap-2">
-                    <a href="#" style="width:38px;height:38px;border-radius:50%;background:#1a3a3a;display:flex;align-items:center;justify-content:center;color:#7a9a9a;text-decoration:none;font-size:.8rem;">in</a>
-                    <a href="#" style="width:38px;height:38px;border-radius:50%;background:#1a3a3a;display:flex;align-items:center;justify-content:center;color:#7a9a9a;text-decoration:none;font-size:.8rem;">tw</a>
-                    <a href="#" style="width:38px;height:38px;border-radius:50%;background:#1a3a3a;display:flex;align-items:center;justify-content:center;color:#7a9a9a;text-decoration:none;font-size:.8rem;">ig</a>
+                <div class="d-flex gap-2 mb-3">
+                    <a href="#" title="LinkedIn" style="width:38px;height:38px;border-radius:50%;background:#1a3a3a;display:flex;align-items:center;justify-content:center;color:#7a9a9a;text-decoration:none;font-size:.8rem;transition:background .2s,color .2s;" onmouseover="this.style.background='#e6a817';this.style.color='#0a2a2a'" onmouseout="this.style.background='#1a3a3a';this.style.color='#7a9a9a'">in</a>
+                    <a href="#" title="Twitter / X" style="width:38px;height:38px;border-radius:50%;background:#1a3a3a;display:flex;align-items:center;justify-content:center;color:#7a9a9a;text-decoration:none;font-size:.8rem;transition:background .2s,color .2s;" onmouseover="this.style.background='#e6a817';this.style.color='#0a2a2a'" onmouseout="this.style.background='#1a3a3a';this.style.color='#7a9a9a'">tw</a>
+                    <a href="#" title="Instagram" style="width:38px;height:38px;border-radius:50%;background:#1a3a3a;display:flex;align-items:center;justify-content:center;color:#7a9a9a;text-decoration:none;font-size:.8rem;transition:background .2s,color .2s;" onmouseover="this.style.background='#e6a817';this.style.color='#0a2a2a'" onmouseout="this.style.background='#1a3a3a';this.style.color='#7a9a9a'">ig</a>
+                </div>
+                <div style="font-size:.82rem;color:#7a9a9a;line-height:1.8;">
+                    <div><a href="mailto:hello@orgvein.com" style="color:#7a9a9a;text-decoration:none;" onmouseover="this.style.color='#e6a817'" onmouseout="this.style.color='#7a9a9a'">info@orgvein.com</a></div>
+                    <div><a href="tel:+910000000000" style="color:#7a9a9a;text-decoration:none;" onmouseover="this.style.color='#e6a817'" onmouseout="this.style.color='#7a9a9a'">+91 00000 00000</a></div>
+                </div>
+            </div>
+
+            <!-- Col 4: Address -->
+            <div class="col-md-4">
+                <div style="font-size:.75rem;font-weight:700;letter-spacing:.15em;color:#fff;margin-bottom:1.25rem;">
+                    ADDRESS<span style="color:#e6a817;margin-left:2px;">|</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+
+                    <!-- Office 1 -->
+                    <div style="display:flex;gap:.75rem;align-items:flex-start;">
+                        <span style="color:#e6a817;font-size:.85rem;margin-top:.15rem;">&#9679;</span>
+                        <div>
+                            <div style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#fff;margin-bottom:.3rem;">OFFICE 1</div>
+                            <address style="font-style:normal;font-size:.83rem;color:#7a9a9a;line-height:1.7;margin:0;">
+                                2715-C, 7th Floor, Tower 2,<br>
+                                Hilite Business Park, Calicut<br>
+                                Kerala – 673014, India
+                            </address>
+                        </div>
+                        <!-- Office 2 -->
+                        <span style="color:#e6a817;font-size:.85rem;margin-top:.15rem;">&#9679;</span>
+                        <div>
+                            <div style="font-size:.7rem;font-weight:700;letter-spacing:.15em;color:#fff;margin-bottom:.3rem;">OFFICE 2</div>
+                            <address style="font-style:normal;font-size:.83rem;color:#7a9a9a;line-height:1.7;margin:0;">
+                                Arora Complex, 2nd Floor, LG road,<br>
+                                Moozhikkal, Kozhikode,<br>
+                                Kerala - 673571, India
+                            </address>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -56,8 +88,8 @@
                     &copy; {% now "Y" %} ORGVEIN PVT LTD. ALL RIGHTS RESERVED.
                 </span>
                 <div class="d-flex gap-4">
-                    <a href="#" style="font-size:.72rem;letter-spacing:.1em;color:#4a6a6a;text-decoration:none;">PRIVACY POLICY</a>
-                    <a href="#" style="font-size:.72rem;letter-spacing:.1em;color:#4a6a6a;text-decoration:none;">TERMS OF SERVICE</a>
+                    <a href="#" style="font-size:.72rem;letter-spacing:.1em;color:#4a6a6a;text-decoration:none;" onmouseover="this.style.color='#e6a817'" onmouseout="this.style.color='#4a6a6a'">PRIVACY POLICY</a>
+                    <a href="#" style="font-size:.72rem;letter-spacing:.1em;color:#4a6a6a;text-decoration:none;" onmouseover="this.style.color='#e6a817'" onmouseout="this.style.color='#4a6a6a'">TERMS OF SERVICE</a>
                 </div>
             </div>
         </div>

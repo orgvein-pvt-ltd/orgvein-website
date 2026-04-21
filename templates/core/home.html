@@ -7,17 +7,13 @@
 <section class="hero-section text-center text-white">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <span class="badge mb-3" style="background:#e6a817;color:#0a2a2a;font-size:.8rem;letter-spacing:.1em;">BUSINESS ARCHITECTURE & ENABLEMENT</span>
-        <h1 class="hero-title fw-bold">Build Structured Businesses <br>That Scale with Clarity</h1>
-        <p class="hero-sub fst-italic">Structure. Clarity. Scalable Growth.</p>
+        <h1>Business Architecture and Organization Enablement Company</h1>
+        <p class="hero-sub fst-italic">Build Structured Businesses That Scale with Clarity</p>
         <p class="hero-desc mx-auto">
             Orgvein helps growing businesses transform operational chaos into structured, scalable systems
             across business, sales, marketing, HR, and technology.
-            <br>
-            When growth outpaces structure, efficiency declines. We implement systems that bring clarity, control,
-            and sustainable growth.
         </p>
-        <a href="#contact" class="btn hero-btn mt-2">Start Your Business Diagnosis</a>
+        <a href="#diagnosis" class="btn hero-btn mt-2">Start Your Business Diagnosis</a>
     </div>
 </section>
 {% endblock %}
@@ -27,7 +23,7 @@
 <!-- ── ABOUT ── -->
 <section class="about-section py-5 mb-2" id="about">
     <div class="row align-items-center g-5">
-        <div class="col-lg-6">
+        <div class="col-lg-6 about-animate-left">
             <h2 class="section-title">About Orgvein</h2>
             <p class="text-muted lh-lg">
                 Orgvein is a business architecture and enablement firm focused on helping organizations build
@@ -43,7 +39,7 @@
                 but struggling with operational complexity, lack of clarity, or inconsistent performance.
             </p>
         </div>
-        <div class="col-md-6 text-center">
+        <div class="col-md-6 text-center about-animate-right">
             <img src="{% static 'img/about_img.png' %}" alt="About Orgvein" class="about-img img-fluid">
         </div>
     </div>
@@ -105,7 +101,8 @@
             <div class="methodology-step-data"
                  data-num="{{ step.num }}"
                  data-title="{{ step.title }}"
-                 data-desc="{{ step.desc }}">
+                 data-desc="{{ step.desc }}"
+                data-image="{% static step.image %}">
             </div>
         {% endfor %}
     </div>
@@ -144,8 +141,8 @@
 </section>
 
 <!-- ── FAQ ── -->
-<section class="faq-section py-5 mb-4" id="faq">
-    <div class="row g-5">
+<section class="faq-section py-5" id="faq">
+    <div class="row g-5 align-items-center">
 
         <!-- Left — Title -->
         <div class="col-lg-4">
@@ -183,20 +180,49 @@
 </section>
 
 <!-- ── CTA ── -->
-<section class="cta-section py-5 mb-2" id="diagnosis">
-    <div class="row g-5 align-items-center">
+<section class="cta-section py-5" id="diagnosis">
+    <div class="row g-4 align-items-center">
 
         <!-- Left — Content -->
         <div class="col-lg-5">
             <h2 class="fw-bold">Start Your Business Diagnosis Today</h2>
             <p class="text-muted mt-2">Get clarity on what's holding your business back.</p>
+            <div class="contact-block">
+
+            <!-- Phone -->
+            <div class="contact-item d-flex align-items-start mb-4">
+                <div class="contact-icon light">
+                    <i class="bi bi-telephone"></i>
+                </div>
+                <div>
+                    <h6 class="contact-label">Consultation Lines</h6>
+
+                    <div class="contact-card">
+                        <small>BUSINESS SUPPORT</small>
+                        <strong>+91 9249 539294</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item d-flex align-items-start">
+                <div class="contact-icon dark">
+                    <i class="bi bi-envelope"></i>
+                </div>
+                <div>
+                    <h6 class="contact-label">General Enquiries</h6>
+                    <p class="contact-email mb-0">hr@orgvein.in</p>
+                    <p class="contact-email">info@orgvein.com</p>
+                </div>
+            </div>
+        </div>
         </div>
 
         <!-- Right — Form -->
         <div class="col-lg-7">
             <div class="diagnosis-form-card" id="formContainer">
-                <h3 class="form-card-title">Schedule Diagnostic</h3>
-                <p class="form-card-sub">Book a free strategy session with our experts.</p>
+                <h3 class="form-card-title">Request a free Consultation</h3>
+                <p class="form-card-sub">fill out the form & we'll get back to you</p>
 
                 {% if messages %}
                     {% for message in messages %}
