@@ -108,7 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.2 });
 
-    document.querySelectorAll('.about-animate-left, .about-animate-right')
+    document.querySelectorAll('.about-animate-left, .about-animate-right, .methodology-modern')
         .forEach(el => observer.observe(el));
+
+    const methodologySection = document.querySelector('.methodology-modern');
+
+    if (methodologySection) {
+        observer.observe(methodologySection);
+    }
 
 });
