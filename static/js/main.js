@@ -1,6 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ------------------ ALERT FADE (your existing code) ------------------ */
+    if (document.querySelector("#particles-js")) {
+        particlesJS("particles-js", {
+          particles: {
+            number: {
+              value: 120,
+              density: { enable: true, value_area: 800 }
+            },
+
+            color: { value: "#ffffff" }, // white snow
+
+            shape: { type: "circle" },
+
+            opacity: {
+              value: 0.6,
+              random: true
+            },
+
+            size: {
+              value: 4,
+              random: true
+            },
+
+            line_linked: {
+              enable: false
+            },
+
+            move: {
+              enable: true,
+              speed: 8,
+              direction: "bottom",
+              random: true,
+              straight: false,
+              out_mode: "out",
+              bounce: false
+            }
+          },
+
+          interactivity: {
+            events: {
+              onhover: { enable: false },
+              onclick: { enable: false }
+            }
+          },
+
+          retina_detect: true
+        });
+    }
+
+
+    /* ------------------ ALERT FADE  ------------------ */
     document.querySelectorAll('.message').forEach(msg => {
         setTimeout(() => {
             msg.style.transition = 'opacity 0.5s';
@@ -8,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => msg.remove(), 500);
         }, 4000);
     });
-
 
     /* ------------------ METHODOLOGY ANIMATION ------------------ */
 
