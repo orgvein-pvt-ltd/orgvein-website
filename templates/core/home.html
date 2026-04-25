@@ -79,27 +79,8 @@
     <p class="text-muted text-center mb-5">
         We follow a proven framework to transform businesses from unstructured growth to scalable systems
     </p>
-    <div class="methodology-wrapper">
-
-        <!-- PREVIOUS CARD -->
-        <div class="side-card prev">
-            <span class="step-num" id="prev-num"></span>
-            <p id="prev-title"></p>
-        </div>
-
-        <!-- MAIN CARD -->
-        <div class="main-card text-center">
-            <div class="step-number"></div>
-            <h3 class="step-title"></h3>
-            <p class="step-desc mt-2"></p>
-        </div>
-
-        <!-- NEXT CARD -->
-        <div class="side-card next">
-            <span class="step-num" id="next-num"></span>
-            <p id="next-title"></p>
-        </div>
-
+    <div class="slider-track-outer">
+        <div class="slider-track" id="sliderTrack"></div>
     </div>
     <div style="display:none;">
         {% for step in methodology %}

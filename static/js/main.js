@@ -70,82 +70,81 @@ document.addEventListener('DOMContentLoaded', () => {
         image: el.dataset.image
     }));
 
-    let index = 0;
+    const track = document.getElementById('sliderTrack');
+    const CARD_W = 260;
+    const ACTIVE_W = 320;
+    const GAP = 20;
 
-    const mainCard = document.querySelector('.main-card');
-    const prevCard = document.querySelector('.prev');
-    const nextCard = document.querySelector('.next');
+    // Triple the steps so we always have cards on both sides
+    const loopedSteps = [...steps, ...steps, ...steps];
+    let activeIndex = steps.length;
+    let cards = [];
+    let isJumping = false;
 
-    const title = document.querySelector('.step-title');
-    const number = document.querySelector('.step-number');
-    const desc = document.querySelector('.step-desc');
+    function buildCards() {
+        track.innerHTML = '';
+        cards = [];
 
-    function render() {
-        const prevIndex = (index - 1 + steps.length) % steps.length;
-        const nextIndex = (index + 1) % steps.length;
-
-        const current = steps[index];
-        const prev = steps[prevIndex];
-        const next = steps[nextIndex];
-
-        // MAIN
-        title.innerText = current.title;
-        number.innerText = current.num;
-        desc.innerText = current.desc;
-        mainCard.style.backgroundImage = `url('${current.image}')`;
-        mainCard.style.backgroundSize = 'cover';
-        mainCard.style.backgroundPosition = 'center';
-
-        // PREV
-        prevCard.querySelector('p').innerText = prev.title;
-        prevCard.querySelector('.step-num').innerText = prev.num;
-        prevCard.style.backgroundImage = `url('${prev.image}')`;
-        prevCard.style.backgroundSize = 'cover';
-        prevCard.style.backgroundPosition = 'center';
-
-        // NEXT
-        nextCard.querySelector('p').innerText = next.title;
-        nextCard.querySelector('.step-num').innerText = next.num;
-        nextCard.style.backgroundImage = `url('${next.image}')`;
-        nextCard.style.backgroundSize = 'cover';
-        nextCard.style.backgroundPosition = 'center';
+        loopedSteps.forEach((s, i) => {
+            const card = document.createElement('div');
+            card.className = 'method-card';
+            card.style.backgroundImage = `url('${s.image}')`;
+            card.style.backgroundSize = 'cover';
+            card.style.backgroundPosition = 'center';
+            card.innerHTML = `
+                <span class="card-num">${s.num}</span>
+                <div class="card-title">${s.title}</div>
+                <div class="card-desc">${s.desc}</div>
+            `;
+            card.addEventListener('click', () => { activeIndex = i; render(true); });
+            track.appendChild(card);
+            cards.push(card);
+        });
     }
 
-    function animateSlide() {
-
-        // Step 1: animate
-        mainCard.classList.add('move-left');
-        nextCard.classList.add('move-center');
-        nextCard.classList.remove('move-right');
-
-        // Fix layering DURING animation
-        mainCard.style.zIndex = 2;
-        nextCard.style.zIndex = 4;
-        prevCard.style.zIndex = 1;
-
-        setTimeout(() => {
-
-            index = (index + 1) % steps.length;
-
-            // Reset classes
-            mainCard.classList.remove('move-left');
-            nextCard.classList.remove('move-center');
-
-            // 🔥 IMPORTANT: reset z-index AFTER animation
-            mainCard.style.zIndex = 3;
-            nextCard.style.zIndex = 2;
-
-            render();
-
-        }, 600);
+    function getTranslateX(index) {
+        const containerW = track.parentElement.offsetWidth;
+        let offsetBefore = 0;
+        for (let i = 0; i < index; i++) {
+            offsetBefore += CARD_W + GAP;
+        }
+        return containerW / 2 - ACTIVE_W / 2 - offsetBefore;
     }
 
-    // initial state
-    nextCard.classList.add('move-right');
-    render();
+    function render(animate = true) {
+        cards.forEach((card, i) => {
+            card.classList.remove('active', 'near');
+            const diff = Math.abs(i - activeIndex);
+            if (i === activeIndex) card.classList.add('active');
+            else if (diff === 1) card.classList.add('near');
+        });
 
-    // Auto loop
-    setInterval(animateSlide, 2500);
+        track.style.transition = animate ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+        track.style.transform = `translateX(${getTranslateX(activeIndex)}px)`;
+    }
+
+    function advance() {
+        if (isJumping) return;
+        activeIndex++;
+        render(true);
+
+        // When we reach the last copy, silently jump back to middle copy
+        if (activeIndex >= steps.length * 2) {
+            isJumping = true;
+            setTimeout(() => {
+                activeIndex = activeIndex - steps.length;
+                render(false);
+                isJumping = false;
+            }, 650);
+        }
+    }
+
+    buildCards();
+    render(false);
+
+    window.addEventListener('resize', () => render(false));
+
+    setInterval(advance, 2500);
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
