@@ -4,22 +4,50 @@
 
 {% block full_width %}
 <!-- Hero — full width, outside container -->
-<section id="hero-section" class="hero-section text-center text-white">
-    <!-- PARTICLES BACKGROUND -->
+<section id="hero-section" class="hero-section">
     <div id="particles-js"></div>
-
-    <!-- OVERLAY -->
     <div class="hero-overlay"></div>
 
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>Business Architecture and<br>Organization Enablement<br>Experts for Scalable Growth</h1>
-        <p class="hero-sub fst-italic">Build Structured Businesses That Scale with Clarity</p>
-        <p class="hero-desc mx-auto">
-            Orgvein helps growing businesses transform operational chaos into structured, scalable systems
-            across business, sales, marketing, HR, and technology.
+    <div class="hero-wrapper">
+
+        <!-- TOP EYEBROW -->
+        <div class="hero-eyebrow-row">
+            <span class="hero-dot"></span>
+            <span class="hero-eyebrow-text">Business Architecture & Organisation Enablement</span>
+            <span class="hero-dot"></span>
+        </div>
+
+        <!-- MAIN HEADING -->
+        <h1 class="hero-h1">
+            Experts for
+            <span class="hero-h1-outline">Scalable</span>
+            Growth
+        </h1>
+
+        <!-- TAGLINE -->
+        <p class="hero-tagline">Build Structured Businesses That Scale with Clarity</p>
+
+        <!-- DIVIDER -->
+        <div class="hero-divider">
+            <span></span>
+            <i class="bi bi-diamond-fill"></i>
+            <span></span>
+        </div>
+
+        <!-- SUBHEADING -->
+        <p class="hero-sub">
+            Orgvein helps growing businesses transform operational chaos into structured,
+            scalable systems across business, sales, marketing, HR, and technology.
         </p>
-        <a href="#diagnosis" class="btn hero-btn mt-2">Start Your Business Diagnosis</a>
+
+        <!-- CTA -->
+        <div class="hero-cta-row">
+            <a href="#diagnosis" class="hero-cta-main">
+                Start Your Business Diagnosis
+                <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+
     </div>
 </section>
 {% endblock %}
@@ -28,31 +56,63 @@
 
 <!-- ── ABOUT ── -->
 <section class="about-section py-5 mb-2" id="about">
-    <div class="row align-items-center g-5">
-        <div class="col-lg-6 about-animate-left">
-            <h2 class="section-title">About Orgvein</h2>
-            <p class="text-muted lh-lg">
-                Orgvein is a business architecture and enablement firm focused on helping organizations build
-                strong internal systems that support sustainable growth.
-            </p>
-            <p class="text-muted lh-lg">
-                The name <strong>Orgvein</strong> represents the idea that every business needs a structured
-                flow just like veins in a body to function efficiently. We integrate people, processes,
-                and technology to eliminate inefficiencies, improve visibility, and create scalable operations.
-            </p>
-            <p class="text-muted lh-lg">
-                We work with SME founders, business owners, and leadership teams who are experiencing growth
-                but struggling with operational complexity, lack of clarity, or inconsistent performance.
-            </p>
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 about-animate-left">
+                <h2 class="section-title">About Orgvein</h2>
+                <p class="text-muted lh-lg">
+                    Orgvein is a business architecture and enablement firm focused on helping organizations build
+                    strong internal systems that support sustainable growth.
+                </p>
+                <p class="text-muted lh-lg">
+                    The name <strong>Orgvein</strong> represents the idea that every business needs a structured
+                    flow just like veins in a body to function efficiently. We integrate people, processes,
+                    and technology to eliminate inefficiencies, improve visibility, and create scalable operations.
+                </p>
+                <p class="text-muted lh-lg">
+                    We work with SME founders, business owners, and leadership teams who are experiencing growth
+                    but struggling with operational complexity, lack of clarity, or inconsistent performance.
+                </p>
+            </div>
+            <div class="col-md-6 text-center about-animate-right">
+                <img src="{% static 'img/about_img.png' %}" alt="About Orgvein" class="about-img img-fluid">
+            </div>
         </div>
-        <div class="col-md-6 text-center about-animate-right">
-            <img src="{% static 'img/about_img.png' %}" alt="About Orgvein" class="about-img img-fluid">
+    </div>
+</section>
+
+<!-- ── MISSION & VISION ── -->
+<section class="mv-section" id="mission-vision">
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="mv-card">
+                <span class="mv-tag">Mission</span>
+                <h3 class="mv-title">What We're Here to Do</h3>
+                <p class="mv-body">
+                    To empower organisations with structured consulting and transformative training that
+                    streamline operations, build skilled teams, and enable sustainable growth through
+                    technology-driven systems.
+                </p>
+                <div class="mv-footer-line"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mv-card">
+                <span class="mv-tag">Vision</span>
+                <h3 class="mv-title">Where We're Headed</h3>
+                <p class="mv-body">
+                    To be India's most trusted growth partner for businesses by bringing
+                    <strong>clarity. structure. flow</strong> into their operations—helping organizations
+                    build aligned systems, improve execution, and achieve scalable, sustainable growth.
+                </p>
+                <div class="mv-footer-line"></div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- What We Do -->
-<section class="mb-5">
+<section class="mb-5" id="service">
     <h2 class="fw-bold border-bottom pb-2 mb-3">What We Do</h2>
     <p>We design and implement structured business systems that enable predictable growth and operational efficiency.</p>
     <h5>Our Core Services:</h5>

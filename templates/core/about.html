@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About – OrgVein{% endblock %}
+
+{% block full_width %}
+<!-- Welcome orgvein -->
+<section class="about-hero">
+    <div class="about-overlay"></div>
+
+    <div class="container">
+        <div class="about-hero-top">
+            <h1>About Orgvein</h1>
+        </div>
+
+        <div class="about-hero-bottom">
+            <h2>Welcome to Orgvein</h2>
+            <p>
+                We’re glad you’re here. At Orgvein, we believe every growing business deserves clarity,
+                structure, and flow in the way it operates.<br/>
+                Our goal is to help organizations build stronger systems, work more confidently,
+                and grow with greater direction and stability.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<!-- about story -->
+<section class="about-story">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left: Heading -->
+            <div class="col-md-4">
+                <h3>From Business Chaos to Clarity, Structure, and Flow </h3>
+                <a href="{% url 'home' %}" class="hero-cta-main">
+                    Explore Our Services
+                    <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+
+            <!-- Right: Content Card -->
+            <div class="col-md-8">
+                <div class="story-card">
+                    <h1>Our Story</h1>
+                    <p>
+                        Orgvein began with a simple realization—businesses often grow faster than the systems meant to support them.
+                        What starts as momentum can gradually turn into confusion, inefficiencies, and a lack of clarity across teams.
+                        We saw this pattern repeatedly while working with founders and leadership teams navigating growth.
+                    </p>
+
+                    <p>
+                        That's why Orgvein was created—not just to fix gaps, but to build structured, scalable systems that bring everything together.
+                        By aligning people, processes, and technology, we help organizations regain control, improve visibility,
+                        and move forward with consistency and confidence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- what orgvein + MISSION & VISION Combined -->
+<section class="about-meaning-mv">
+    <div class="container">
+        <div class="row g-4 align-items-start">
+
+            <!-- Left: What Orgvein Means -->
+            <div class="col-md-5">
+                <div class="meaning-content">
+                    <h2>What "Orgvein" Means</h2>
+
+                    <p class="meaning-highlight">
+                        Orgvein = Organization + Vein
+                    </p>
+
+                        <p class="meaning-text">
+                        Just like veins quietly carry what keeps the body alive, Orgvein represents the systems
+                        that keep a business moving forward every day. We help bring clarity to how things work,
+                        create structure where it's needed, and make sure every part of the organization stays
+                        connected so teams can work with ease, purpose, and direction.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Mission & Vision Slider -->
+            <div class="col-md-7">
+                <div class="mv-slider-container">
+
+                    <!-- Mission Card -->
+                    <div class="mv-slide active" id="mission-slide">
+                        <h3 class="mv-title">Our Mission.</h3>
+                        <p class="mv-text">
+                            To support growing organizations with practical consulting and hands-on training that bring clarity
+                            to daily operations and confidence to teams. We help businesses simplify processes, strengthen people
+                            capabilities, and adopt ERP systems and technology in a way that actually works. The goal is to build
+                            organizations that run smoothly, adapt easily, and grow steadily without losing control or direction.
+                        </p>
+                    </div>
+
+                    <!-- Vision Card -->
+                    <div class="mv-slide" id="vision-slide">
+                        <h3 class="mv-title">Our Vision.</h3>
+                        <p class="mv-text">
+                            To become a trusted global partner for SMEs, helping them build strong business architecture and
+                            operational systems that support consistent performance and long-term growth.
+                        </p>
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <div class="mv-nav">
+                        <button class="mv-arrow prev-arrow" onclick="prevSlide()">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 18l-6-6 6-6"/>
+                            </svg>
+                        </button>
+                        <button class="mv-arrow next-arrow" onclick="nextSlide()">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.mv-slide');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+</script>
+
+<!-- ── about-philosophy ── -->
+<section class="about-philosophy">
+    <div class="container">
+        <div class="philosophy-content">
+
+            <h2>Philosophy</h2>
+
+            <p class="philosophy-intro">
+                We believe businesses work best when everything is clear, organised, and connected.
+            </p>
+
+            <p>
+                At Orgvein, we bring clarity to direction and roles—so teams know what to do and can make decisions with
+                confidence. We build structure through practical systems that create consistency and accountability.
+                And we ensure flow, where work, communication, and decisions move smoothly across the organisation.
+            </p>
+
+            <p class="philosophy-summary">
+                When these come together, businesses don’t just run—they perform with focus,
+                stability, and confidence.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- ── about-different ── -->
+<section class="about-different">
+    <div class="container text-center">
+
+        <h2>What Makes Us Different</h2>
+
+        <p class="different-highlight">
+            We don’t believe in isolated solutions.
+        </p>
+
+        <p>
+            We bring together people, processes, and technology into a unified system—so your organization
+            operates with clarity, consistency, and control.
+        </p>
+
+    </div>
+</section>
+
+<!-- ── about-value ── -->
+<section class="about-values">
+    <div class="container text-center">
+
+        <h2>Our Core Values</h2>
+
+        <p class="values-intro">
+            Our work is guided by a few clear principles:
+        </p>
+
+        <div class="values-list">
+            <span>Clarity over complexity</span>
+            <span>Systems over shortcuts</span>
+            <span>Execution over ideas</span>
+            <span>Long-term value over quick wins</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- ── about-approach ── -->
+<section class="about-approach">
+    <div class="container text-center">
+
+        <h2>Our Approach</h2>
+
+        <p class="approach-highlight">
+            We work as an extension of your team.
+        </p>
+
+        <p>
+            From designing structured systems to implementing and continuously refining them,
+            we stay involved—ensuring meaningful, lasting outcomes for your business.
+        </p>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -97,3 +97,7 @@ class HomeView(TemplateView):
                 self.get_context_data(form=DiagnosisForm())
             )
         return self.render_to_response(self.get_context_data(form=form))
+
+
+class AboutView(TemplateView):
+    template_name = 'core/about.html'
