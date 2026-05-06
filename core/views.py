@@ -101,3 +101,81 @@ class HomeView(TemplateView):
 
 class AboutView(TemplateView):
     template_name = 'core/about.html'
+
+
+class ServiceView(TemplateView):
+    template_name = 'core/services.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['icons_list'] = [
+            {'name': 'Strategy', "icon": "bi-briefcase"},
+            {'name': 'Operations', "icon": "bi-graph-up-arrow"},
+            {'name': 'Marketing', "icon": "bi-megaphone"},
+            {'name': 'Finance', "icon": "bi-people"},
+            {'name': 'Team', "icon": "bi-calculator"},
+            {'name': 'Technology', "icon": "bi-gear"},
+            {'name': 'Growth', "icon": "bi-mortarboard"},
+        ]
+
+        context['services_list'] = [
+            {
+                'number': '01',
+                'icon': 'bi-building',
+                'title': 'Business Architecture',
+                'description': 'We help you structure business models and operating frameworks.',
+                'link': '#'
+            },
+            {
+                'number': '02',
+                'icon': 'bi-graph-up-arrow',
+                'title': 'Sales System Design',
+                'description': 'We design sales systems that create pipeline and drive revenue.',
+                'link': '#'
+            },
+            {
+                'number': '03',
+                'icon': 'bi-megaphone',
+                'title': 'Marketing Systems',
+                'description': 'We build marketing systems that attract, engage and convert.',
+                'link': '#'
+            },
+            {
+                'number': '04',
+                'icon': 'bi-people',
+                'title': 'HR & People Systems',
+                'description': 'We create people systems that build strong and aligned teams.',
+                'link': '#'
+            },
+            {
+                'number': '05',
+                'icon': 'bi-gear',
+                'title': 'Process Optimization',
+                'description': 'We simplify processes to improve efficiency and reduce cost.',
+                'link': '#'
+            },
+            {
+                'number': '06',
+                'icon': 'bi-laptop',
+                'title': 'Technology Enablement',
+                'description': 'We implement the right technology to streamline operations.',
+                'link': '#'
+            },
+            {
+                'number': '07',
+                'icon': 'bi-mortarboard',
+                'title': 'Training & Development (Organace)',
+                'description': 'We upskill teams with practical training and learning tools.',
+                'link': '#'
+            },
+            {
+                'number': '08',
+                'icon': 'bi-bar-chart',
+                'title': 'Performance & Growth Strategy',
+                'description': 'We help you set goals, track metrics and achieve growth.',
+                'link': '#'
+            },
+        ]
+
+        return context

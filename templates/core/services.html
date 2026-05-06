@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Services – OrgVein{% endblock %}
+
+{% block full_width %}
+
+<section class="services-hero">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Left Content -->
+            <div class="col-lg-6">
+                <h1 class="services-title">
+                    Business Services That Build <span>Scalable Organizations</span>
+                </h1>
+                <p class="services-subtitle">
+                    At Orgvein, we provide integrated solutions that transform your business
+                    into a system-driven, scalable organization.
+                </p>
+            </div>
+
+            <!-- Right Orbit Design -->
+            <div class="col-lg-6">
+                <div class="orbit">
+                    <!-- Center Hub -->
+                    <div class="main-hub">
+                        <i class="bi bi-infinity" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+
+                    <!-- Orbiting Icons -->
+                    {% for icon in icons_list %}
+                        <div class="orbit-item item-{{ forloop.counter }}">
+                            <div class="icon-circle">
+                                <i class="bi {{ icon.icon }}"></i>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- What We Do Section -->
+<section class="what-we-do">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <p class="section-label">What We Do</p>
+            <h2 class="section-title">Our Core Services</h2>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="row">
+            {% for service in services_list %}
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-icon">
+                                <i class="bi {{ service.icon }}"></i>
+                            </div>
+                        </div>
+                        <span class="service-number">{{ service.number }}</span>
+                    </div>
+                    <h3 class="service-title">{{ service.title }}</h3>
+                    <p class="service-description">
+                        {{ service.description }}
+                    </p>
+                    <a href="{{ service.link }}" class="service-link">
+                        Learn More <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Orgvein -->
+<section class="why-orgvein-simple">
+    <div class="container text-center">
+
+        <h2 class="section-title">Why Choose Orgvein</h2>
+
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <p>End-to-end solutions</p>
+            </div>
+            <div class="col-md-3">
+                <p>System-driven approach</p>
+            </div>
+            <div class="col-md-3">
+                <p>SME-focused expertise</p>
+            </div>
+            <div class="col-md-3">
+                <p>Measurable outcomes</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="services-cta">
+    <div class="container text-center">
+        <p class="cta-text">
+            Explore each service to understand how we can transform your business.
+        </p>
+
+        <a href="{% url 'home' %}#diagnosis" class="btn btn-dark mt-3">
+            Get Started
+        </a>
+    </div>
+</section>
+
+{% endblock %}
