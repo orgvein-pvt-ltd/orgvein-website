@@ -402,7 +402,6 @@
 /* ======== about-different ========== */
 
 .about-different {
-    padding: 80px 0;
     background: #f8f9fa;
 }
 
@@ -419,7 +418,6 @@
 }
 
 .about-different p {
-    max-width: 700px;
     margin: 0 auto 10px;
     line-height: 1.8;
     color: #555;
@@ -444,7 +442,7 @@
 .values-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     gap: 15px;
 }
 
@@ -480,4 +478,118 @@
     margin: 0 auto 10px;
     line-height: 1.8;
     color: #555;
+}
+
+/* ============ founder =============*/
+.about-founders {
+    background: linear-gradient(145deg, #fdf8ee, #f0e6c8);
+}
+
+.about-founders .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.founder-header {
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.founder-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.founder-header p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1;
+}
+
+.founder-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.founder-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.founder-img {
+    position: relative;
+}
+
+.founder-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: filter 0.3s ease;
+}
+
+.founder-item:hover .founder-img img {
+    filter: grayscale(0%);
+}
+
+.founder-text {
+    padding-top: 8px;
+}
+
+.founder-quote {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.founder-text > p:last-of-type {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.founder-name {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .about-founders {
+        padding: 60px 20px;
+    }
+
+    .founder-header h2 {
+        font-size: 2rem;
+    }
+
+    .founder-header {
+        margin-bottom: 40px;
+    }
+
+    .founder-item {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .founder-img img {
+        height: 220px;
+    }
+
+    .founder-quote {
+        font-size: 1.1rem;
+    }
 }
