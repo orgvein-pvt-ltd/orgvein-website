@@ -1,0 +1,162 @@
+<!-- core/templates/core/service_detail.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ service.hero.title }} - Orgvein{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="service-hero">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <!-- Content -->
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <span class="hero-label">
+                        OrgVein Services
+                    </span>
+                    <h1>{{ service.hero.title }}</h1>
+                    <p>
+                        {{ service.hero.description }}
+                    </p>
+                    <a href="{% url 'home' %}#diagnosis" class="hero-btn">
+                        Book a Call
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Challenges Section -->
+<section class="challenges-section py-5">
+    <div class="container">
+        <!-- Heading -->
+        <div class="text-center mb-5">
+            <span class="challenge-badge">Common Challenges</span>
+            <h2 class="fw-bold mt-3">
+                {{ service.challenges.title }}
+            </h2>
+        </div>
+        <!-- Cards -->
+        <div class="row g-4">
+            {% for challenge in service.challenges.items %}
+            <div class="col-lg-4 col-md-6">
+                <div class="challenge-card h-100">
+                    <!-- Icon -->
+                    <div class="challenge-icon">
+                        <i class="bi bi-exclamation-triangle"></i>
+                    </div>
+                    <!-- Text -->
+                    <div class="challenge-text">
+                        <h5>{{ challenge|truncatewords:3 }}</h5>
+                        <p>{{ challenge }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- What We Provide Section -->
+<section class="offerings py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="p-4 p-lg-5 h-100 bg-white rounded-4 border-0 shadow-sm d-flex flex-column">
+                    <h3 class="h4 fw-bold mb-4" style="color: #1a2b4b;">What You Get</h3>
+                    <div class="custom-scroll pe-2">
+                        <ul class="list-unstyled mb-0">
+                            {% for item in service.provide.items %}
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="custom-check me-3 mt-1">
+                                    <i class="bi bi-check2"></i>
+                                </span>
+                                <span class="text-secondary">{{ item }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="p-4 p-lg-5 h-100 bg-white rounded-4 border-0 shadow-sm d-flex flex-column">
+                    <h3 class="h4 fw-bold mb-4" style="color: #1a2b4b;">Key Benefits</h3>
+                    <div class="custom-scroll pe-2">
+                        <ul class="list-unstyled mb-0">
+                            {% for benefit in service.benefits.items %}
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="custom-check me-3 mt-1">
+                                    <i class="bi bi-check2"></i>
+                                </span>
+                                <span class="text-secondary">{{ benefit }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQs Section -->
+<section class="faqs py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="h2 fw-bold mb-5 text-center">Frequently Asked Questions</h2>
+                <div class="accordion" id="faqAccordion">
+                    {% for faq in service.faqs %}
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h3 class="accordion-header" id="heading{{ forloop.counter }}">
+                            <button class="accordion-button {% if forloop.counter != 1 %}collapsed{% endif %} fw-medium"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse{{ forloop.counter }}"
+                                    aria-expanded="{% if forloop.counter == 1 %}true{% else %}false{% endif %}"
+                                    aria-controls="collapse{{ forloop.counter }}">
+                                {{ faq.q }}
+                            </button>
+                        </h3>
+                        <div id="collapse{{ forloop.counter }}"
+                             class="accordion-collapse collapse {% if forloop.counter == 1 %}show{% endif %}"
+                             aria-labelledby="heading{{ forloop.counter }}"
+                             data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                {{ faq.a }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="cta-card p-4 p-md-5 rounded-4 border-0 shadow-sm">
+                    <h2 class="h3 fw-bold mb-2" style="color: #064e3b;">{{ service.cta.title|default:"Ready to build a sales system that works?" }}</h2>
+                    <p class="mb-4 text-muted">{{ service.cta.description|default:"Book a call with our expert today." }}</p>
+
+                    <a href="{% url 'home' %}#diagnosis" class="btn btn-cta px-4 py-2 fw-medium d-inline-flex align-items-center">
+                        {{ service.cta.button|default:"Book a Call" }}
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

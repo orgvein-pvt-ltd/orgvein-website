@@ -1,7 +1,9 @@
 from django.views.generic import TemplateView
-from django.shortcuts import redirect
+from django.shortcuts import render
+from django.http import Http404
 from django.contrib import messages
 from .forms import DiagnosisForm
+from .services import SERVICES
 
 
 class HomeView(TemplateView):
@@ -50,13 +52,15 @@ class HomeView(TemplateView):
         context['testimonials'] = [
             {
                 'quote': """
-                    Before working with Orgvein, our operations lacked structure
-                    and clarity. Their systematic approach transformed the way our
-                    teams function. We now have clear processes, better visibility,
-                    and improved performance across departments.
+                    As the owner of Time for Kids, I truly appreciate Orgvein 
+                    for handling our registration, accounts, banking, and website 
+                    smoothly. Their support helped us focus more on caring for 
+                    children without worrying about operations. They are 
+                    professional, supportive, and easy to work with. I highly 
+                    recommend Orgvein and their services.
                 """,
-                'author': 'Managing Director',
-                'company': 'Growing Enterprise',
+                'author': 'VK SHIHAB',
+                'company': 'TIME FOR KIDS',
             },
             {
                 'quote': """
@@ -109,6 +113,9 @@ class ServiceView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
         context['icons_list'] = [
             {'name': 'Strategy', "icon": "bi-briefcase"},
             {'name': 'Operations', "icon": "bi-graph-up-arrow"},
@@ -123,59 +130,84 @@ class ServiceView(TemplateView):
             {
                 'number': '01',
                 'icon': 'bi-building',
-                'title': 'Business Architecture',
+                'title': 'Business Consulting',
                 'description': 'We help you structure business models and operating frameworks.',
-                'link': '#'
+                'link': '/services/business-consulting/',
+                'slug': 'business-consulting',
             },
             {
                 'number': '02',
-                'icon': 'bi-graph-up-arrow',
+                'icon': 'Sales Systems',
                 'title': 'Sales System Design',
                 'description': 'We design sales systems that create pipeline and drive revenue.',
-                'link': '#'
+                'link': '/services/sales-system-design/',
+                'slug': 'sales-system-design',
             },
             {
                 'number': '03',
                 'icon': 'bi-megaphone',
                 'title': 'Marketing Systems',
                 'description': 'We build marketing systems that attract, engage and convert.',
-                'link': '#'
+                'link': '/services/marketing-systems/',
+                'slug': 'marketing-systems',
             },
             {
                 'number': '04',
                 'icon': 'bi-people',
-                'title': 'HR & People Systems',
+                'title': ' HR & Workforce Systems',
                 'description': 'We create people systems that build strong and aligned teams.',
-                'link': '#'
+                'link': '/services/hr-people-systems/',
+                'slug': 'hr-people-systems',
             },
             {
                 'number': '05',
                 'icon': 'bi-gear',
-                'title': 'Process Optimization',
+                'title': 'Accounting & Compliance',
                 'description': 'We simplify processes to improve efficiency and reduce cost.',
-                'link': '#'
+                'link': '/services/accounting-compliance/',
+                'slug': 'accounting-compliance',
             },
             {
                 'number': '06',
                 'icon': 'bi-laptop',
-                'title': 'Technology Enablement',
+                'title': 'IT & ERP Solutions',
                 'description': 'We implement the right technology to streamline operations.',
-                'link': '#'
+                'link': '/services/it-erp-solutions/',
+                'slug': 'it-erp-solutions',
             },
             {
                 'number': '07',
                 'icon': 'bi-mortarboard',
-                'title': 'Training & Development (Organace)',
+                'title': 'Operations Management',
                 'description': 'We upskill teams with practical training and learning tools.',
-                'link': '#'
+                'link': '/services/operations-management/',
+                'slug': 'operations-management',
             },
             {
                 'number': '08',
                 'icon': 'bi-bar-chart',
-                'title': 'Performance & Growth Strategy',
+                'title': 'Training & Development',
                 'description': 'We help you set goals, track metrics and achieve growth.',
-                'link': '#'
+                'link': '/services/training-development/',
+                'slug': 'training-development'
             },
         ]
 
+        return context
+
+
+class ServiceDetailView(TemplateView):
+    """
+    Individual service detail page
+    """
+    template_name = 'core/service_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get('slug')
+        service = SERVICES.get(slug)
+        if not service:
+            raise Http404("Service not found")
+        context['service'] = service
+        context['slug'] = slug
         return context

@@ -1,0 +1,253 @@
+/* =========== MODERN SERVICE HERO SECTION ========== */
+
+.service-hero {
+    padding: 10px 0;
+    background-color: #fcfdfe; /* Very light subtle background */
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.hero-content {
+    max-width: 600px; /* Text reading width limit */
+}
+
+.hero-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0f766e; /* Teal shade */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 40px;
+}
+
+/* Label-inu munnil oru cherya line nalkan */
+.hero-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background-color: #0f766e;
+    transform: translateY(-50%);
+}
+
+.service-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.8rem); /* Responsive font size */
+    font-weight: 800;
+    line-height: 1.1;
+    color: #0f172a; /* Dark Navy */
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.service-hero p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #475569; /* Muted slate color */
+    margin-bottom: 2.5rem;
+}
+
+/* Modern Button Styling */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #0f172a;
+    color: #ffffff !important;
+    padding: 16px 36px;
+    border-radius: 8px; /* Slightly rounded for professional look */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+}
+
+.hero-btn:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+}
+
+.hero-btn i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.hero-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* ======================================
+   RESPONSIVE ADJUSTMENTS
+====================================== */
+
+@media (max-width: 991px) {
+    .service-hero {
+        padding: 80px 0;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-label {
+        padding-left: 0;
+    }
+
+    .hero-label::before {
+        display: none; /* Mobile-il line hider cheyyan */
+    }
+}
+
+@media (max-width: 576px) {
+    .service-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-btn {
+        width: 100%; /* Mobile-il full width button */
+    }
+}
+
+/* =========================
+   Challenges Section
+========================= */
+
+.challenges-section {
+    background: #f8fafc;
+}
+
+.challenge-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 30px;
+    background: #e8f7f2;
+    color: #0f766e;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.challenge-card {
+    background: #fff;
+    border: 1px solid #edf2f7;
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    transition: 0.3s ease;
+}
+
+.challenge-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+}
+
+.challenge-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #e7f8f3;
+    color: #10b981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.challenge-text h5 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+.challenge-text p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ben */
+
+.rounded-4 {
+    border-radius: 1.5rem !important;
+}
+
+/* Scrollable Container */
+.custom-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+/* Custom Scrollbar for Chrome/Safari/Edge */
+.custom-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+.custom-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background-color: #e9f7ef;
+    color: #198754;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.text-secondary {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555 !important;
+}
+
+/* ========== CTA =========== */
+/* CTA Card Styling */
+.cta-card {
+    background-color: #f0fdfa; /* Light mint green background */
+    border: 1px solid #e2e8f0; /* Very subtle border */
+}
+
+/* Button Styling */
+.btn-cta {
+    background-color: #065f46; /* Deep green color */
+    color: white !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-cta:hover {
+    background-color: #044e3a;
+    box-shadow: 0 4px 12px rgba(6, 95, 70, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Heading color adjustment */
+.cta-card h2 {
+    letter-spacing: -0.01em;
+}
