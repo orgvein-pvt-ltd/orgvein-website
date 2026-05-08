@@ -1,25 +1,33 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-<nav class="navbar navbar-expand-lg custom-navbar2">
-  <div class="container">
 
+<nav class="navbar navbar-expand-lg custom-navbar2">
+  <div class="container-fluid px-lg-5">
     <a class="navbar-brand brand2" href="{% url 'home' %}">
-      ORGVEIN</span>
+        <img src="{% static 'img/ov_logo.png' %}" alt="Orgvein Logo" class="navbar-logo">
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-      style="border-color: rgba(230,168,23,0.4);">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a class="nav-link nav2-link active" href="{% url 'home' %}">Home</a></li>
-        <li class="nav-item"><a class="nav-link nav2-link" href="{% url 'about' %}">About</a></li>
-        <li class="nav-item"><a class="nav-link nav2-link" href="{% url 'services' %}">Services</a></li>
+        <li class="nav-item">
+          <a class="nav-link nav2-link active" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav2-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav2-link" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav2-link" href="{% url 'contact' %}">Contact</a>
+        </li>
         <div class="nav2-divider d-none d-lg-block"></div>
         <li class="nav-item">
-          <a class="nav-link nav2-cta" href="#diagnosis">Diagnose →</a>
+          <a class="nav-link nav2-cta" href="#diagnosis">Diagnose &rarr;</a>
         </li>
       </ul>
     </div>

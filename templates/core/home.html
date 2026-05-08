@@ -75,7 +75,7 @@
                 </p>
             </div>
             <div class="col-md-6 text-center about-animate-right">
-                <img src="{% static 'img/about_img.png' %}" alt="About Orgvein" class="about-img img-fluid">
+                <img src="{% static 'img/orgvein_life.jpeg' %}" alt="About Orgvein" class="about-img img-fluid">
             </div>
         </div>
     </div>
@@ -162,27 +162,37 @@
 </section>
 
 <!-- ── TESTIMONIALS ── -->
-<section class="testimonial-section py-5 mb-2">
+<section class="testimonial-section py-5 mb-2 overflow-hidden">
     <div class="text-center mb-5">
         <span class="section-label">Client Stories</span>
         <h2 class="section-title">What Our Clients Say</h2>
     </div>
-    <div class="row g-4 justify-content-center">
-        {% for t in testimonials %}
-        <div class="col-md-6">
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <p class="testimonial-text">{{ t.quote }}</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">{{ t.author|slice:":1" }}</div>
-                    <div>
-                        <div class="author-name">{{ t.author }}</div>
-                        <div class="author-company">{{ t.company }}</div>
+
+    <div class="testimonial-slider">
+        <div class="testimonial-track">
+
+            {% for t in testimonials %}
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+
+                    <p class="testimonial-text">{{ t.quote }}</p>
+
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            {{ t.author|slice:":1" }}
+                        </div>
+
+                        <div>
+                            <div class="author-name">{{ t.author }}</div>
+                            <div class="author-company">{{ t.company }}</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
+
         </div>
-        {% endfor %}
     </div>
 </section>
 

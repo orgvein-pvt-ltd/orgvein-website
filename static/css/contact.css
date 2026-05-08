@@ -1,0 +1,116 @@
+.contact-wrapper {
+    background-color: #ffffff;
+    padding: 5px 0;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    min-height: 1vh;
+}
+
+/* Heading Style */
+.contact-h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+/* Subtext & Links */
+.contact-subtext {
+    font-size: 1.15rem;
+    color: #555555;
+    line-height: 1.7;
+    max-width: 90%;
+}
+
+.mail-link {
+    color: #e67e22; /* Professional Orange/Brown */
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.mail-link:hover {
+    border-bottom: 1px solid #e67e22;
+}
+
+/* Minimal Underline Input Style - White Theme */
+.minimal-input {
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #cccccc !important; /* Light grey underline */
+    color: #111111 !important;
+    padding: 15px 0 !important;
+    font-size: 1.05rem;
+    outline: none;
+    transition: all 0.3s ease;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Placeholder Color */
+.minimal-input::placeholder {
+    color: #999999 !important;
+    font-weight: 400;
+}
+
+/* Focus State - Underline turns Darker/Black */
+.minimal-input:focus {
+    border-bottom: 1px solid #111111 !important;
+    background: transparent !important;
+}
+
+/* Dropdown/Select Styling - Black Arrow */
+select.minimal-input {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+/* Submit Button Style - Black/Minimal */
+.submit-link-btn {
+    background: #111111;
+    border: 1px solid #111111;
+    color: #ffffff;
+    padding: 12px 35px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-link-btn:hover {
+    background-color: #333333;
+    border-color: #333333;
+    transform: translateY(-2px);
+}
+
+/* Info Footer */
+.contact-info-footer {
+    color: #888888;
+    font-size: 0.95rem;
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+}
+
+/* Error/Success Alert Styling */
+.alert {
+    border-radius: 0;
+    font-size: 0.9rem;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .contact-h1 { font-size: 2.5rem; }
+    .contact-wrapper { padding: 80px 0; }
+}
