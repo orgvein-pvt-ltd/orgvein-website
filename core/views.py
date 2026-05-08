@@ -64,13 +64,51 @@ class HomeView(TemplateView):
             },
             {
                 'quote': """
-                    Orgvein didn't just advise they built systems that actually
-                    work. The impact on our sales and operations has been
-                    significant.
+                Partnering with Orgvein has been a great decision for our 
+                business. Their consulting, software, and operational support 
+                helped us bring more structure and efficiency into our work. 
+                Everything is now more organized and easier to manage. I’d 
+                gladly recommend Orgvein to any growing business.
                 """,
-                'author': 'Operations Head',
-                'company': 'Regional Business',
+                'author': 'SETHURAJ SAVERA',
+                'company': 'SAVERA FOOTWEARS',
             },
+            {
+                'quote': """
+                    Orgvein helped us set up ERP software and improve our 
+                    operations in a simple and effective way. Our work has 
+                    become more organized, and managing the business is now 
+                    much easier. Their team was supportive throughout the 
+                    process. I truly appreciate their service and support.
+                """,
+                'author': 'SANJO BABU',
+                'company': 'WINHEELS FOOTWEARS',
+            },
+            {
+                'quote': """
+                    Orgvein helped us set up proper systems, processes, and 
+                    workflows for our business. Because of their support, 
+                    everything runs smoothly and is well organized now. This 
+                    helped me focus more on creating better travel experiences 
+                    without worrying about operations. I truly appreciate their 
+                    support and guidance.
+                """,
+                'author': 'NANDAGOPAN – Director',
+                'company': 'Poyalo',
+            },
+            {
+                'quote': """
+                    Orgvein helped us improve our operations by bringing better 
+                    structure and systems into the business. Our daily work has 
+                    become more organized and easier to manage now. Their 
+                    support has been really helpful throughout the process. I 
+                    would definitely recommend Orgvein to businesses looking 
+                    for operational support.
+                """,
+                'author': 'SINOJ – Director',
+                'company': 'RAGG International',
+            },
+
         ]
         context['faqs'] = [
             ('What does business architecture include?',
@@ -137,7 +175,7 @@ class ServiceView(TemplateView):
             },
             {
                 'number': '02',
-                'icon': 'Sales Systems',
+                'icon': 'bi-graph-up',
                 'title': 'Sales System Design',
                 'description': 'We design sales systems that create pipeline and drive revenue.',
                 'link': '/services/sales-system-design/',
@@ -211,3 +249,22 @@ class ServiceDetailView(TemplateView):
         context['service'] = service
         context['slug'] = slug
         return context
+
+
+class ContactView(TemplateView):
+    template_name = "core/contact.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = kwargs.get('form', DiagnosisForm())
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = DiagnosisForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you! We'll be in touch shortly.")
+            return self.render_to_response(
+                self.get_context_data(form=DiagnosisForm())
+            )
+        return self.render_to_response(self.get_context_data(form=form))

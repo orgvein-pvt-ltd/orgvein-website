@@ -1,6 +1,5 @@
 /* =============== CSS CUSTOM PROPERTIES ============= */
 :root {
-    --navy: #001a3d;
     --green: #145c43;
     --green-dark: #0f3d2e;
     --gray-light: #f0f4ff;
@@ -14,7 +13,7 @@
 /* =========== SERVICES HERO SECTION ================= */
 .services-hero {
     padding: 5px 0;
-    color: var(--navy);
+    color: #e9ae66;
 }
 
 .services-title {
@@ -22,7 +21,7 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
-    color: var(--navy);
+    color: #e9ae66;
 }
 
 .services-title span {
@@ -51,7 +50,7 @@
     position: absolute;
     width: 120px;
     height: 120px;
-    background: var(--navy);
+    background: #e9ae66;
     border-radius: 50%;
     z-index: 5;
     display: flex;
@@ -66,11 +65,16 @@
     height: 65px;
     transition: all 0.3s ease;
 }
+.hub-logo {
+    width: 205px;
+    height: 500px;
+    object-fit: contain;
+}
 
 .icon-circle {
     width: 100%;
     height: 100%;
-    background: var(--gray-light);
+    background: #f0e6ca;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -109,19 +113,10 @@
     margin-bottom: 60px;
 }
 
-.section-label {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--green);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
 .section-title {
     font-size: 42px;
     font-weight: 700;
-    color: var(--navy);
+    color: #e9ae66;
     margin-bottom: 0;
 }
 
@@ -173,7 +168,7 @@
 .service-title {
     font-size: 20px;
     font-weight: 700;
-    color: var(--navy);
+    color: #e6a817;
     line-height: 1.3;
     margin-bottom: 12px;
 }
