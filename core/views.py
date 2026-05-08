@@ -1,9 +1,25 @@
 from django.views.generic import TemplateView
+from django.shortcuts import redirect
 from django.shortcuts import render
 from django.http import Http404
 from django.contrib import messages
 from .forms import DiagnosisForm
 from .services import SERVICES
+from .utils import send_to_odoo_crm
+
+
+def diagnosis_view(request):
+    if request.method == 'POST':
+        form = DiagnosisForm(request.POST)
+        if form.is_valid():
+            instance = form.save()
+            send_to_odoo_crm(instance)
+
+            return redirect('success_page')
+    else:
+        form = DiagnosisForm()
+
+    return render(request, 'diagnosis_form.html', {'form': form})
 
 
 class HomeView(TemplateView):
