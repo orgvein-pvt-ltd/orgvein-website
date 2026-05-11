@@ -1,6 +1,5 @@
 from django.views.generic import TemplateView
-from django.shortcuts import redirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import Http404
 from django.contrib import messages
 from .forms import DiagnosisForm
@@ -68,58 +67,50 @@ class HomeView(TemplateView):
         context['testimonials'] = [
             {
                 'quote': """
-                    As the owner of Time for Kids, I truly appreciate Orgvein 
-                    for handling our registration, accounts, banking, and website 
-                    smoothly. Their support helped us focus more on caring for 
-                    children without worrying about operations. They are 
-                    professional, supportive, and easy to work with. I highly 
-                    recommend Orgvein and their services.
+                    Handling registrations, accounts, banking, and website 
+                    management became completely stress free. 
+                    The professional support helped us focus more on caring for
+                    children and daily activities
                 """,
                 'author': 'VK SHIHAB',
                 'company': 'TIME FOR KIDS',
             },
             {
                 'quote': """
-                Partnering with Orgvein has been a great decision for our 
-                business. Their consulting, software, and operational support 
-                helped us bring more structure and efficiency into our work. 
-                Everything is now more organized and easier to manage. I’d 
-                gladly recommend Orgvein to any growing business.
+                Clear guidance, practical CDC support, and smooth execution
+                made the entire process easier.
+                The transparency and business-focused approach were truly 
+                valuable for us
                 """,
-                'author': 'SETHURAJ SAVERA',
-                'company': 'SAVERA FOOTWEARS',
+                'author': 'Abdul Latheef',
+                'company': 'BestLife',
             },
             {
                 'quote': """
-                    Orgvein helped us set up ERP software and improve our 
-                    operations in a simple and effective way. Our work has 
-                    become more organized, and managing the business is now 
-                    much easier. Their team was supportive throughout the 
-                    process. I truly appreciate their service and support.
+                    ERP implementation and operational improvements were 
+                    handled in a simple and effective way.
+                    Managing daily business activities has now become much 
+                    smoother and more organized.
                 """,
                 'author': 'SANJO BABU',
                 'company': 'WINHEELS FOOTWEARS',
             },
             {
                 'quote': """
-                    Orgvein helped us set up proper systems, processes, and 
-                    workflows for our business. Because of their support, 
-                    everything runs smoothly and is well organized now. This 
-                    helped me focus more on creating better travel experiences 
-                    without worrying about operations. I truly appreciate their 
-                    support and guidance.
+                    Proper systems, workflows, and processes helped our 
+                    operations run without confusion or delays.
+                    This gave me more freedom to focus on creating better 
+                    travel experiences for customers.
                 """,
                 'author': 'NANDAGOPAN – Director',
                 'company': 'Poyalo',
             },
             {
                 'quote': """
-                    Orgvein helped us improve our operations by bringing better 
-                    structure and systems into the business. Our daily work has 
-                    become more organized and easier to manage now. Their 
-                    support has been really helpful throughout the process. I 
-                    would definitely recommend Orgvein to businesses looking 
-                    for operational support.
+                    Improved systems and structured workflows made our daily 
+                    operations more organized and efficient.
+                    The overall support and guidance helped simplify many areas 
+                    of the business.
                 """,
                 'author': 'SINOJ – Director',
                 'company': 'RAGG International',
