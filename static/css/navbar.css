@@ -4,7 +4,6 @@
     background: #0e2a1c !important;
     border-bottom: 1px solid rgba(230, 168, 23, 0.15);
     padding: 0;
-    height: 70px;
     display: flex;
     align-items: center;
 }
@@ -20,6 +19,8 @@
 .navbar-logo {
     height: 150px !important;
     width: auto;
+    margin-top: -40px !important;
+    margin-bottom: -40px !important;
     object-fit: contain;
 }
 

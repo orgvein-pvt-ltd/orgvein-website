@@ -162,37 +162,82 @@
 </section>
 
 <!-- ── TESTIMONIALS ── -->
-<section class="testimonial-section py-5 mb-2 overflow-hidden">
-    <div class="text-center mb-5">
-        <span class="section-label">Client Stories</span>
-        <h2 class="section-title">What Our Clients Say</h2>
-    </div>
+<section class="testimonial-section py-5 overflow-hidden">
+    <div class="container">
 
-    <div class="testimonial-slider">
-        <div class="testimonial-track">
+        <div class="text-center mb-5">
+            <span class="section-label">Client Stories</span>
+            <h2 class="section-title">What Our Clients Say</h2>
+        </div>
 
-            {% for t in testimonials %}
-            <div class="testimonial-slide">
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">"</div>
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
 
-                    <p class="testimonial-text">{{ t.quote }}</p>
+                <!-- First Loop -->
+                {% for t in testimonials %}
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
 
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            {{ t.author|slice:":1" }}
+                        <div class="testimonial-quote">“</div>
+
+                        <p class="testimonial-text">
+                            {{ t.quote }}
+                        </p>
+
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                {{ t.author|slice:":1" }}
+                            </div>
+
+                            <div>
+                                <div class="author-name">
+                                    {{ t.author }}
+                                </div>
+
+                                <div class="author-company">
+                                    {{ t.company }}
+                                </div>
+                            </div>
                         </div>
 
-                        <div>
-                            <div class="author-name">{{ t.author }}</div>
-                            <div class="author-company">{{ t.company }}</div>
-                        </div>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
 
+                <!-- Duplicate for smooth infinite -->
+                {% for t in testimonials %}
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-quote">“</div>
+
+                        <p class="testimonial-text">
+                            {{ t.quote }}
+                        </p>
+
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                {{ t.author|slice:":1" }}
+                            </div>
+
+                            <div>
+                                <div class="author-name">
+                                    {{ t.author }}
+                                </div>
+
+                                <div class="author-company">
+                                    {{ t.company }}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
         </div>
+
     </div>
 </section>
 
