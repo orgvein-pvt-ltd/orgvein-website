@@ -149,7 +149,8 @@ class HomeView(TemplateView):
     def post(self, request, *args, **kwargs):
         form = DiagnosisForm(request.POST)
         if form.is_valid():
-            form.save()
+            instance = form.save()
+            send_to_odoo_crm(instance)
             messages.success(request, "Thank you! We'll be in touch shortly.")
             return self.render_to_response(
                 self.get_context_data(form=DiagnosisForm())
@@ -278,7 +279,8 @@ class ContactView(TemplateView):
     def post(self, request, *args, **kwargs):
         form = DiagnosisForm(request.POST)
         if form.is_valid():
-            form.save()
+            instance = form.save()
+            send_to_odoo_crm(instance)
             messages.success(request, "Thank you! We'll be in touch shortly.")
             return self.render_to_response(
                 self.get_context_data(form=DiagnosisForm())
