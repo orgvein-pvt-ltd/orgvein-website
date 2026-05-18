@@ -61,9 +61,6 @@ class HomeView(TemplateView):
              'desc': 'Continuously refine systems for long-term scalability.',
              'image': 'img/methodology/decon.jpeg'},
         ]
-        context['methodology_traits'] = [
-            'Data-driven', 'Customized', 'Measurable', 'Sustainable'
-        ]
         context['testimonials'] = [
             {
                 'quote': """

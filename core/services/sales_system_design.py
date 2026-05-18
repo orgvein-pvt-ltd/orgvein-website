@@ -11,6 +11,7 @@ SERVICE = {
     },
 
     'challenges': {
+        'title': 'Common Challenges',
         'items': [
             'Unpredictable revenue and inconsistent sales pipeline',
             'Leads not converting due to poor qualification',

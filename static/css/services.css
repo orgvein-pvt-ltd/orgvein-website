@@ -1,11 +1,15 @@
 /* =============== CSS CUSTOM PROPERTIES ============= */
 :root {
-    --green: #145c43;
-    --green-dark: #0f3d2e;
-    --gray-light: #f0f4ff;
-    --gray-border: #e2e8f0;
-    --gray-text: #4a5568;
-    --gray-muted: #cbd5e0;
+    --black: #000000;
+    --black-soft: #1a1a1a;
+    --gold: #d2b77b;
+    --white: #ffffff;
+
+    --gray-light: #f8f8f8;
+    --gray-border: #ececec;
+    --gray-text: #5a5a5a;
+    --gray-muted: #b8b8b8;
+
     --orbit-radius: 170px;
     --orbit-size: 450px;
 }
@@ -13,7 +17,7 @@
 /* =========== SERVICES HERO SECTION ================= */
 .services-hero {
     padding: 5px 0;
-    color: var(--green);
+    color: var(--black);
 }
 
 .services-title {
@@ -21,11 +25,11 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
-    color: var(--green);
+    color: var(--black);
 }
 
 .services-title span {
-    color: var(--green);
+    color: var(--gold);
 }
 
 .services-subtitle {
@@ -50,13 +54,14 @@
     position: absolute;
     width: 120px;
     height: 120px;
-    background: var(--green);
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 70%, #d2b77b 100%);
     border-radius: 50%;
     z-index: 5;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(210, 183, 123, 0.25);
 }
 
 .orbit-item {
@@ -65,6 +70,7 @@
     height: 65px;
     transition: all 0.3s ease;
 }
+
 .hub-logo {
     width: 205px;
     height: 500px;
@@ -74,28 +80,32 @@
 .icon-circle {
     width: 100%;
     height: 100%;
-    background: #f0e6ca;
+    background: #d2b77b;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--gray-border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(210, 183, 123, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .icon-circle i {
     font-size: 1.4rem;
-    color: var(--green);
+    color: var(--black);
 }
 
 .icon-circle:hover {
     transform: scale(1.15);
-    box-shadow: 0 6px 16px rgba(20, 92, 67, 0.25);
-    background: var(--green);
+    box-shadow: 0 6px 16px rgba(210, 183, 123, 0.3);
+    background: var(--black);
 }
 
-/* 7-item orbit positions — angle = (360/7)*n */
+.icon-circle:hover i {
+    color: var(--white);
+}
+
+/* 7-item orbit positions */
 .item-1 { transform: rotate(0deg)      translate(var(--orbit-radius)) rotate(0deg); }
 .item-2 { transform: rotate(51.43deg)  translate(var(--orbit-radius)) rotate(-51.43deg); }
 .item-3 { transform: rotate(102.86deg) translate(var(--orbit-radius)) rotate(-102.86deg); }
@@ -116,7 +126,7 @@
 .section-title {
     font-size: 42px;
     font-weight: 700;
-    color: var(--green);
+    color: var(--black);
     margin-bottom: 0;
 }
 
@@ -126,13 +136,14 @@
     padding: 30px;
     margin-bottom: 30px;
     border: 1px solid var(--gray-border);
-    border-radius: 12px;
+    border-radius: 16px;
+    background: var(--white);
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .service-card:hover {
-    border-color: var(--green);
-    box-shadow: 0 8px 24px rgba(20, 92, 67, 0.1);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(210, 183, 123, 0.15);
     transform: translateY(-5px);
 }
 
@@ -146,17 +157,18 @@
 .service-icon {
     width: 60px;
     height: 60px;
-    background: #f0f9ff;
-    border-radius: 12px;
+    background: #000000;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .service-icon i {
     font-size: 28px;
-    color: var(--green);
+    color: #d2b77b;
 }
 
 .service-number {
@@ -168,7 +180,7 @@
 .service-title {
     font-size: 20px;
     font-weight: 700;
-    color: var(--green);
+    color: var(--black);
     line-height: 1.3;
     margin-bottom: 12px;
 }
@@ -186,18 +198,152 @@
     gap: 8px;
     font-size: 14px;
     font-weight: 600;
-    color: var(--green);
+    color: var(--black);
     text-decoration: none;
     transition: gap 0.3s ease, color 0.3s ease;
 }
 
-.service-link:hover {
-    gap: 12px;
-    color: var(--green-dark);
+.service-card:hover .service-icon {
+    background: #d2b77b;
+    transform: rotate(-3deg) scale(1.05);
+    transition: all 0.3s ease;
 }
 
-.service-link i {
+.service-card:hover .service-icon i {
+    color: #000000;
+}
+
+/* ================= WHY ORGVEIN ================= */
+
+.why-orgvein {
+    padding: 8px 0;
+    background: #fff;
+}
+
+.why-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.why-subtitle {
+    color: #666;
     font-size: 16px;
+    margin: 0;
+}
+
+.why-card {
+    background: #fff;
+    border: 1px solid #ece4d2;
+    border-radius: 20px;
+    padding: 35px 20px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(210, 183, 123, 0.18);
+    border-color: #d2b77b;
+}
+
+.why-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 20px;
+    border-radius: 18px;
+
+    /* GOLD + BLACK */
+    background: linear-gradient(135deg, #000000, #d2b77b);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.why-icon i {
+    color: #fff;
+    font-size: 28px;
+}
+
+.why-card h6 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #111;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* subtle gold top border */
+.why-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 3px;
+    background: #d2b77b;
+    border-radius: 50px;
+}
+
+/* Required for ::before */
+.why-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .why-orgvein {
+        padding: 60px 0;
+    }
+
+    .why-title {
+        font-size: 34px;
+    }
+
+    .why-card {
+        padding: 28px 16px;
+    }
+
+    .why-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .why-icon i {
+        font-size: 24px;
+    }
+
+    .why-card h6 {
+        font-size: 15px;
+    }
+}
+
+/*========== CTA =========*/
+
+.cta-text {
+    font-size: 18px;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-cta .btn {
+    padding: 10px 24px;
+    font-size: 14px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.services-cta .btn:hover {
+    background: var(--gold);
+    color: var(--black);
 }
 
 /* =================== RESPONSIVE ======================== */
@@ -214,24 +360,44 @@
         --orbit-size: 350px;
     }
 
-    .services-hero { padding: 60px 0; }
+    .services-hero {
+        padding: 60px 0;
+    }
 
     .services-title,
-    .services-subtitle { text-align: center; }
+    .services-subtitle {
+        text-align: center;
+    }
 
-    .services-title { font-size: 32px; }
+    .services-title {
+        font-size: 32px;
+    }
 
-    .services-subtitle { margin: 0 auto 30px; }
+    .services-subtitle {
+        margin: 0 auto 30px;
+    }
 
-    .main-hub { width: 100px; height: 100px; }
-    .main-hub i { font-size: 2rem !important; }
+    .main-hub {
+        width: 100px;
+        height: 100px;
+    }
 
-    .orbit-item { width: 55px; height: 55px; }
-    .icon-circle i { font-size: 1.2rem; }
+    .orbit-item {
+        width: 55px;
+        height: 55px;
+    }
 
-    .section-title { font-size: 32px; }
+    .icon-circle i {
+        font-size: 1.2rem;
+    }
 
-    .service-card { padding: 25px; }
+    .section-title {
+        font-size: 32px;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -240,50 +406,46 @@
         --orbit-size: 300px;
     }
 
-    .services-title { font-size: 28px; }
-    .services-subtitle { font-size: 16px; }
+    .services-title {
+        font-size: 28px;
+    }
 
-    .main-hub { width: 80px; height: 80px; }
-    .main-hub i { font-size: 1.5rem !important; }
+    .services-subtitle {
+        font-size: 16px;
+    }
 
-    .orbit-item { width: 50px; height: 50px; }
+    .main-hub {
+        width: 80px;
+        height: 80px;
+    }
 
-    .section-title { font-size: 28px; }
+    .orbit-item {
+        width: 50px;
+        height: 50px;
+    }
 
-    .service-card { padding: 20px; }
+    .section-title {
+        font-size: 28px;
+    }
 
-    .service-icon { width: 50px; height: 50px; }
-    .service-icon i { font-size: 24px; }
+    .service-card {
+        padding: 20px;
+    }
 
-    .service-title { font-size: 18px; }
-    .service-description { font-size: 14px; }
-}
+    .service-icon {
+        width: 50px;
+        height: 50px;
+    }
 
-/* =======Why orgvein ========= */
-.why-orgvein-simple {
-    padding: 60px 0;
-    background: #ffffff;
-}
+    .service-icon i {
+        font-size: 24px;
+    }
 
-.why-orgvein-simple p {
-    font-size: 15px;
-    color: #444;
-    margin: 10px 0;
-}
+    .service-title {
+        font-size: 18px;
+    }
 
-/*========== CTA =========*/
-.services-cta {
-    padding: 6px 0;
-    background: #f5f7f6;
-}
-
-.cta-text {
-    font-size: 18px;
-    color: #333;
-    max-width: 600px;
-    margin: 0 auto;
-}
-.services-cta .btn {
-    padding: 10px 24px;
-    font-size: 14px;
+    .service-description {
+        font-size: 14px;
+    }
 }

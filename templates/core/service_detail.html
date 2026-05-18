@@ -36,7 +36,6 @@
     <div class="container">
         <!-- Heading -->
         <div class="text-center mb-5">
-            <span class="challenge-badge">Common Challenges</span>
             <h2 class="fw-bold mt-3">
                 {{ service.challenges.title }}
             </h2>
@@ -146,7 +145,7 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <div class="cta-card p-4 p-md-5 rounded-4 border-0 shadow-sm">
-                    <h2 class="h3 fw-bold mb-2" style="color: #064e3b;">{{ service.cta.title|default:"Ready to build a sales system that works?" }}</h2>
+                    <h2 class="h3 fw-bold mb-2" style="color: #d2b77b;">{{ service.cta.title|default:"Ready to build a sales system that works?" }}</h2>
                     <p class="mb-4 text-muted">{{ service.cta.description|default:"Book a call with our expert today." }}</p>
 
                     <a href="{% url 'home' %}#diagnosis" class="btn btn-cta px-4 py-2 fw-medium d-inline-flex align-items-center">

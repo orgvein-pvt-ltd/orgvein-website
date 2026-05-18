@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
               density: { enable: true, value_area: 800 }
             },
 
-            color: { value: "#ffffff" }, // white snow
+            color: { value: "#ffffff" },
 
-            shape: { type: "circle" },
+            shape: { type: "star" },
 
             opacity: {
               value: 0.6,
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             move: {
               enable: true,
-              speed: 8,
+              speed: 1,
               direction: "bottom",
               random: true,
               straight: false,
