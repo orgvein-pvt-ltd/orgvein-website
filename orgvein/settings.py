@@ -31,7 +31,12 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['orgvein.com', 'www.orgvein.com', 'orgvein.in', 'www.orgvein.in', 'localhost', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://orgvein.in",
+    "https://www.orgvein.in",
+]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 
