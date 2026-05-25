@@ -28,18 +28,16 @@ SERVICE = {
     'provide': {
         'title': 'What We Provide',
         'items': [
-            'Odoo ERP implementation & customization',
-            'Business process digitization',
-            'CRM, HRMS, Accounting system deployment',
-            'Workflow automation & rule engines',
-            'System integration & API architecture',
-            'Data model & master-data design',
-            'Role, access & security architecture',
-            'Reporting & BI dashboard systems',
-            'Automation opportunity mapping',
-            'AI use-case design & implementation',
-            'Infrastructure & cloud architecture (AWS / Azure / GCP)',
-            'DevOps & CI/CD pipeline design',
+            'ERP Implementation & Customization (Odoo)',
+            'System Design & Architecture',
+            'Workflow Automation',
+            'API Development & Integrations',
+            'Cloud Infrastructure Management',
+            'DevOps & Deployment Pipelines',
+            'Data Management & Reporting',
+            'AI Solutions Implementation',
+            'System Security & Access Control',
+            'Technical Support & Maintenance',
         ]
     },
 

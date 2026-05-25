@@ -326,7 +326,7 @@ html, body {
 }
 
 .col-md-6:last-child .mv-tag {
-    color: #d4c89a;
+    color: #000000;
     background: rgba(26, 107, 74, 0.10);
 }
 
@@ -348,15 +348,15 @@ html, body {
     margin-bottom: 1.5rem;
 }
 
-.col-md-6:first-child .mv-body { color: #0000; }
+.col-md-6:first-child .mv-body { color: #e8e8e8; }
 .col-md-6:last-child .mv-body  { color: #5a4e35; }
 
 .mv-body strong {
     font-weight: 700;
 }
 
-.col-md-6:first-child .mv-body strong { color: #d4c89a; }
-.col-md-6:last-child .mv-body strong  { color: ##00000; }
+.col-md-6:first-child .mv-body strong { color: #00000; }
+.col-md-6:last-child .mv-body strong  { color: #00000; }
 
 /* Footer line */
 .mv-footer-line {
@@ -820,7 +820,7 @@ html, body {
 /* SUBMIT BUTTON */
 .form-submit-btn {
     background: #e5d5b3;
-    color: #fff;
+    color: #000000;
     padding: 12px;
     border-radius: 30px;
     font-weight: 600;
@@ -866,13 +866,6 @@ html, body {
 .contact-icon.dark {
     background: #0a2a2a;
     color: #fff;
-}
-
-.contact-label {
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    color: #6c757d;
-    margin-bottom: 10px;
 }
 
 /* PHONE CARDS */

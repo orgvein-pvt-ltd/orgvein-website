@@ -25,19 +25,19 @@ SERVICE = {
 
     'provide': {
         'items': [
-            'Sales funnel & pipeline architecture',
-            'Lead capture & qualification framework',
-            'MQL / SQL scoring models',
-            'CRM architecture & deployment (Odoo / Zoho / HubSpot)',
-            'Sales process & stage-exit condition design',
-            'Sales playbooks & call-flow frameworks',
-            'Objection-handling & negotiation scripts',
-            'Pricing & quotation control frameworks',
-            'Deal approval & authority matrices',
-            'Sales dashboards & performance analytics',
-            'Call monitoring & quality audit systems',
-            'Sales training & enablement programs',
-            'Channel partner & affiliate program design',
+            'Sales Funnel & Pipeline Architecture',
+            'Lead Capture & Qualification Framework',
+            'MQL / SQL Scoring Models',
+            'CRM Architecture & Deployment (Odoo / Zoho / HubSpot)',
+            'Sales Process & Stage-Exit Condition Design',
+            'Sales Playbooks & Call-Flow Frameworks',
+            'Objection-Handling & Negotiation Scripts',
+            'Pricing & Quotation Control Frameworks',
+            'Deal Approval & Authority Matrices',
+            'Sales Dashboards & Performance Analytics',
+            'Call Monitoring & Quality Audit Systems',
+            'Sales Training & Enablement Programs',
+            'Channel Partner & Affiliate Program Design',
         ]
     },
 

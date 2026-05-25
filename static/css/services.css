@@ -95,16 +95,6 @@
     color: var(--black);
 }
 
-.icon-circle:hover {
-    transform: scale(1.15);
-    box-shadow: 0 6px 16px rgba(210, 183, 123, 0.3);
-    background: var(--black);
-}
-
-.icon-circle:hover i {
-    color: var(--white);
-}
-
 /* 7-item orbit positions */
 .item-1 { transform: rotate(0deg)      translate(var(--orbit-radius)) rotate(0deg); }
 .item-2 { transform: rotate(51.43deg)  translate(var(--orbit-radius)) rotate(-51.43deg); }

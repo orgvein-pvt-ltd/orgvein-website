@@ -29,18 +29,15 @@ SERVICE = {
     'provide': {
         'title': 'What We Provide',
         'items': [
-            'Process mapping & bottleneck analysis',
-            'SOP design & documentation',
-            'Workflow redesign & optimization',
-            'Task orchestration & dependency mapping',
-            'Capacity & load planning',
-            'Accountability & RACI architecture',
-            'Execution governance frameworks',
-            'Risk & failure-mode architecture',
-            'Contingency & incident response design',
-            'Vendor governance & contract frameworks',
-            'Performance standards & SLA design',
-            'Execution monitoring & audit systems',
+            'Daily operations monitoring & co-ordination.',
+            'Identify problems of SMEs and Startups and communicate this with CRM.',
+            'Task Tracking & Execution management.',
+            'Founder & Leadership Opportunities.',
+            'SOP implementation & enforcement.',
+            'Cross department co-ordination.',
+            'KPI tracking & Performance monitoring.',
+            'Internal communication & workflow management.',
+            'Business Consulting ',
         ]
     },
 

@@ -29,16 +29,11 @@ SERVICE = {
     'provide': {
         'title': 'What We Provide',
         'items': [
-            'ERP & CRM adoption training',
-            'Sales process & playbook training',
-            'Leadership & governance training',
-            'Process & SOP training',
-            'Compliance & finance training',
-            'Performance management training',
-            'Orgvein system onboarding',
-            'Client workforce readiness programs',
-            'Custom curriculum design',
-            'Certification programs',
+            'Corporate Training Programs',
+            'Business Roadmap Training',
+            'Internship Training Programs',
+            'Departmental Training by Internal Experts',
+            'Placement & Career Support',
         ]
     },
 
