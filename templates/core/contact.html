@@ -28,7 +28,7 @@
                 <form method="POST" class="dark-form">
                     {% csrf_token %}
 
-                    <div class="row g-4"> <div class="col-md-6">
+                    <div class="row g-4"> <div class="col-md-12">
                             <div class="form-group">
                                 <input type="text" name="full_name" class="minimal-input"
                                        placeholder="Full Name*" value="{{ form.full_name.value|default:'' }}" required>
@@ -52,7 +52,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <select name="service" class="minimal-input select-icon" required>
                                     {% for value, label in form.fields.service.choices %}
@@ -68,7 +68,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <textarea name="message" class="minimal-input"
-                                          placeholder="How can we help you?*" rows="2">{{ form.message.value|default:'' }}</textarea>
+                                          placeholder="How can we help you?" rows="2">{{ form.message.value|default:'' }}</textarea>
                                 {{ form.message.errors }}
                             </div>
                         </div>
