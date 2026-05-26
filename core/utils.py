@@ -7,7 +7,7 @@ load_dotenv()
 
 def send_to_odoo_crm(instance):
     try:
-        odoo = odoorpc.ODOO(os.getenv('ODOO_HOST'), port=int(os.getenv('ODOO_PORT')), protocol='jsonrpc+ssl')
+        odoo = odoorpc.ODOO(os.getenv('ODOO_HOST'), port=int(os.getenv('ODOO_PORT')), protocol='jsonrpc')
         odoo.login(os.getenv('ODOO_DB'), os.getenv('ODOO_USER'), os.getenv('ODOO_PASSWORD'))
 
         lead_data = {
