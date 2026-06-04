@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-b+52i*^)rb_l+p*rezxq=7j5$j8^4s(q6%wx3h#mm(-nhfzs_)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['orgvein.com', 'www.orgvein.com', 'orgvein.in', 'www.orgvein.in', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['orgvein.in', 'www.orgvein.in', 'localhost', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = [
     "https://orgvein.in",
