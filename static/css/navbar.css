@@ -40,8 +40,6 @@
     height: 54px !important;
     width: auto;
     object-fit: contain;
-
-    transition: transform 0.4s ease;
 }
 
 .brand2:hover .navbar-logo {
@@ -59,17 +57,12 @@
     font-family: 'DM Sans', sans-serif !important;
     font-size: 13px !important;
     font-weight: 500 !important;
-
     letter-spacing: 0.18em;
     text-transform: uppercase;
-
     color: rgba(255,255,255,0.72) !important;
-
     padding: 10px 18px !important;
-
     position: relative;
     border-radius: 10px;
-
     transition: all 0.35s ease;
 }
 
@@ -79,21 +72,16 @@
     position: absolute;
     left: 18px;
     bottom: 6px;
-
     width: 0%;
     height: 1px;
-
     background: #d2b77b;
-
     transition: width 0.35s ease;
 }
 
 /* Hover */
 .nav2-link:hover {
     color: #ffffff !important;
-
     background: rgba(210, 183, 123, 0.08);
-
     transform: translateY(-2px);
 }
 
@@ -115,7 +103,6 @@
 .nav2-divider {
     width: 1px;
     height: 26px;
-
     background: linear-gradient(
         to bottom,
         transparent,
@@ -132,25 +119,16 @@
     font-family: 'DM Sans', sans-serif !important;
     font-size: 13px !important;
     font-weight: 500 !important;
-
     letter-spacing: 0.12em;
     text-transform: uppercase;
-
     color: #d2b77b !important;
-
     padding: 12px 28px !important;
-
     border-radius: 12px;
-
     border: 1px solid rgba(210, 183, 123, 0.5) !important;
-
     background: rgba(210, 183, 123, 0.05);
-
     position: relative;
     overflow: hidden;
-
     transition: all 0.35s ease;
-
     text-decoration: none;
 }
 
@@ -158,20 +136,16 @@
 .nav2-cta::before {
     content: "";
     position: absolute;
-
     top: 0;
     left: -120%;
-
     width: 100%;
     height: 100%;
-
     background: linear-gradient(
         120deg,
         transparent,
         rgba(255,255,255,0.18),
         transparent
     );
-
     transition: all 0.6s ease;
 }
 
@@ -182,11 +156,9 @@
 .nav2-cta:hover {
     background: #d2b77b !important;
     color: #000 !important;
-
     box-shadow:
         0 0 20px rgba(210, 183, 123, 0.35),
         0 0 40px rgba(210, 183, 123, 0.15);
-
     transform: translateY(-2px);
 }
 
@@ -197,26 +169,21 @@
     .custom-navbar2 {
         padding: 12px 0;
     }
-
     .navbar-nav {
         padding-top: 20px;
         gap: 6px;
     }
-
     .nav2-link {
         padding: 12px 14px !important;
     }
-
     .nav2-divider {
         display: none;
     }
-
     .nav2-cta {
         margin-top: 12px;
         display: inline-flex;
         justify-content: center;
     }
-
     .navbar-logo {
         height: 46px !important;
     }
