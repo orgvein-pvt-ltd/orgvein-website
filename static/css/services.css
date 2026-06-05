@@ -204,7 +204,6 @@
 }
 
 /* ================= WHY ORGVEIN ================= */
-
 .why-orgvein {
     padding: 8px 0;
     background: #fff;
@@ -224,6 +223,8 @@
 }
 
 .why-card {
+    position: relative;
+    overflow: hidden;
     background: #fff;
     border: 1px solid #ece4d2;
     border-radius: 20px;
@@ -244,10 +245,7 @@
     height: 68px;
     margin: 0 auto 20px;
     border-radius: 18px;
-
-    /* GOLD + BLACK */
     background: linear-gradient(135deg, #000000, #d2b77b);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -278,43 +276,7 @@
     border-radius: 50px;
 }
 
-/* Required for ::before */
-.why-card {
-    position: relative;
-    overflow: hidden;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-
-    .why-orgvein {
-        padding: 60px 0;
-    }
-
-    .why-title {
-        font-size: 34px;
-    }
-
-    .why-card {
-        padding: 28px 16px;
-    }
-
-    .why-icon {
-        width: 58px;
-        height: 58px;
-    }
-
-    .why-icon i {
-        font-size: 24px;
-    }
-
-    .why-card h6 {
-        font-size: 15px;
-    }
-}
-
 /*========== CTA =========*/
-
 .cta-text {
     font-size: 18px;
     color: #333;
@@ -387,6 +349,32 @@
 
     .service-card {
         padding: 25px;
+    }
+
+    /* Merged Why Orgvein Mobile rules into here */
+    .why-orgvein {
+        padding: 60px 0;
+    }
+
+    .why-title {
+        font-size: 34px;
+    }
+
+    .why-card {
+        padding: 28px 16px;
+    }
+
+    .why-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .why-icon i {
+        font-size: 24px;
+    }
+
+    .why-card h6 {
+        font-size: 15px;
     }
 }
 
