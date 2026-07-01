@@ -144,10 +144,32 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <div class="cta-card p-4 p-md-5 rounded-4 border-0 shadow-sm">
-                    <h2 class="h3 fw-bold mb-2" style="color: #d2b77b;">{{ service.cta.title|default:"Ready to build a sales system that works?" }}</h2>
-                    <p class="mb-4 text-muted">{{ service.cta.description|default:"Book a call with our expert today." }}</p>
+                    <section class="cta py-5 bg-light">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 mx-auto">
+                                    <div class="cta-card p-4 p-md-5 rounded-4 border-0 shadow-sm">
+                                        <h2 class="h3 fw-bold mb-2" style="color: #d2b77b;">{{
+                                            service.cta.title|default:"Ready to scale your business operations with
+                                            clarity?" }}</h2>
+                                        <p class="mb-4 text-muted">{{ service.cta.description|default:"Book a strategic
+                                            consultation call with our experts today." }}</p>
 
-                    <a href="{% url 'contact' %}" class="btn btn-cta px-4 py-2 fw-medium d-inline-flex align-items-center">
+                                        <a href="{% url 'contact' %}"
+                                           class="btn btn-cta px-4 py-2 fw-medium d-inline-flex align-items-center">
+                                            {{ service.cta.button|default:"Book a Consultation" }}
+                                            <i class="bi bi-arrow-right ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <p class="mb-4 text-muted">{{ service.cta.description|default:"Book a call with our expert today."
+                        }}</p>
+
+                    <a href="{% url 'contact' %}"
+                       class="btn btn-cta px-4 py-2 fw-medium d-inline-flex align-items-center">
                         {{ service.cta.button|default:"Book a Call" }}
                         <i class="bi bi-arrow-right ms-2"></i>
                     </a>

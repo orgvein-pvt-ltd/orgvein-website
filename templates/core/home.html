@@ -12,46 +12,43 @@ OrgVein helps organizations improve processes, systems, and performance through 
     <div class="hero-overlay"></div>
 
     <div class="hero-wrapper">
-
-        <!-- TOP EYEBROW -->
-        <div class="hero-eyebrow-row">
-            <span class="hero-dot"></span>
-            <span class="hero-eyebrow-text">Business Architecture & Organisation Enablement</span>
-            <span class="hero-dot"></span>
-        </div>
-
-        <!-- MAIN HEADING -->
-        <h1 class="hero-h1">
-            Business
-            <span class="hero-h1-outline">Made</span>
-            simple
-        </h1>
-
-        <!-- TAGLINE -->
-        <p class="hero-tagline">Build Structured Organizations That Scale with Clarity</p>
-
-        <!-- DIVIDER -->
-        <div class="hero-divider">
-            <span></span>
-            <i class="bi bi-diamond-fill"></i>
-            <span></span>
-        </div>
-
-        <!-- SUBHEADING -->
-        <p class="hero-sub">
-            Orgvein helps growing companies transform operational chaos into structured,
-            scalable systems across business, sales, marketing, HR, and technology.
-        </p>
-
-        <!-- CTA -->
-        <div class="hero-cta-row">
-            <a href="#diagnosis" class="hero-cta-main">
-                Start Your Diagnosis
-                <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-        </div>
-
+    <!-- Main Headings -->
+    <div class="hero-eyebrow-row">
+        <span class="hero-dot"></span>
+        <span class="hero-eyebrow-text">Business Architecture & Organisation Enablement</span>
+        <span class="hero-dot"></span>
     </div>
+
+    <h1 style="display: none; visibility: hidden;">Business Architecture & Consulting Company in Kozhikode, Kerala - OrgVein</h1>
+
+    <h2 class="hero-h1">
+        Business
+        <span class="hero-h1-outline">Made</span>
+        simple
+    </h2>
+
+    <p class="hero-tagline">Build Structured Organizations That Scale with Clarity</p>
+
+    <div class="hero-divider">
+        <span></span>
+        <i class="bi bi-diamond-fill"></i>
+        <span></span>
+    </div>
+
+    <p class="hero-sub">
+        Orgvein is a premier business consulting company based in Kozhikode, Kerala.
+        We help growing companies transform operational chaos into structured,
+        scalable systems across business architecture, sales, marketing, HR, and technology.
+    </p>
+
+    <div class="hero-cta-row">
+        <a href="#diagnosis" class="hero-cta-main">
+            Start Your Diagnosis
+            <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+    </div>
+
+</div>
 </section>
 {% endblock %}
 
@@ -69,8 +66,8 @@ OrgVein helps organizations improve processes, systems, and performance through 
                 </p>
                 <p class="text-muted lh-lg">
                     The name <a href="{% url 'services' %}" class="fw-bold text-black text-decoration-none">
-                        <strong>Orgvein</strong>
-                    </a>represents the idea that every business needs a structured
+                    <strong>Orgvein</strong>
+                </a>represents the idea that every business needs a structured
                     flow just like veins in a body to function efficiently. We integrate people, processes,
                     and technology to eliminate inefficiencies, improve visibility, and create scalable operations.
                 </p>
@@ -80,7 +77,8 @@ OrgVein helps organizations improve processes, systems, and performance through 
                 </p>
             </div>
             <div class="col-md-6 text-center about-animate-right">
-                <img src="{% static 'img/about_home.webp' %}" alt="Orgvein team collaboration and workplace culture" class="about-img img-fluid">
+                <img src="{% static 'img/about_home.webp' %}" alt="Orgvein team collaboration and workplace culture"
+                     class="about-img img-fluid">
             </div>
         </div>
     </div>
@@ -119,7 +117,8 @@ OrgVein helps organizations improve processes, systems, and performance through 
 <!-- What We Do -->
 <section class="mb-5" id="service">
     <h2 class="fw-bold border-bottom pb-2 mb-3">What We Do</h2>
-    <p>We design and implement structured business systems that enable predictable growth and operational efficiency.</p>
+    <p>We design and implement structured business systems that enable predictable growth and operational
+        efficiency.</p>
     <div class="row g-3">
         {% for service in services %}
         <div class="col-md-3 col-sm-6">
@@ -140,19 +139,20 @@ OrgVein helps organizations improve processes, systems, and performance through 
 
     <h2 class="fw-bold text-center mb-2">Our Methodology</h2>
     <p class="text-muted text-center mb-5">
-        A Structured Approach to Business Growth<br>We follow a proven framework to transform businesses from unstructured growth to scalable systems
+        A Structured Approach to Business Growth<br>We follow a proven framework to transform businesses from
+        unstructured growth to scalable systems
     </p>
     <div class="slider-track-outer">
         <div class="slider-track" id="sliderTrack"></div>
     </div>
     <div style="display:none;">
         {% for step in methodology %}
-            <div class="methodology-step-data"
-                 data-num="{{ step.num }}"
-                 data-title="{{ step.title }}"
-                 data-desc="{{ step.desc }}"
-                data-image="{% static step.image %}">
-            </div>
+        <div class="methodology-step-data"
+             data-num="{{ step.num }}"
+             data-title="{{ step.title }}"
+             data-desc="{{ step.desc }}"
+             data-image="{% static step.image %}">
+        </div>
         {% endfor %}
     </div>
 
@@ -283,30 +283,30 @@ OrgVein helps organizations improve processes, systems, and performance through 
             <p class="text-muted mt-2">Get clarity on what's holding your business back.</p>
             <div class="contact-block">
 
-            <!-- Phone -->
-            <div class="contact-item d-flex align-items-start mb-4">
-                <div class="contact-icon light">
-                    <i class="bi bi-telephone"></i>
+                <!-- Phone -->
+                <div class="contact-item d-flex align-items-start mb-4">
+                    <div class="contact-icon light">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <div>
+                        <div class="contact-card">
+                            <small>BUSINESS SUPPORT</small>
+                            <strong>+91 9249 539294</strong>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <div class="contact-card">
-                        <small>BUSINESS SUPPORT</small>
-                        <strong>+91 9249 539294</strong>
+
+                <!-- Email -->
+                <div class="contact-item d-flex align-items-start">
+                    <div class="contact-icon dark">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div>
+                        <p class="contact-email mb-0">hr@orgvein.in</p>
+                        <p class="contact-email">info@orgvein.com</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Email -->
-            <div class="contact-item d-flex align-items-start">
-                <div class="contact-icon dark">
-                    <i class="bi bi-envelope"></i>
-                </div>
-                <div>
-                    <p class="contact-email mb-0">hr@orgvein.in</p>
-                    <p class="contact-email">info@orgvein.com</p>
-                </div>
-            </div>
-        </div>
         </div>
 
         <!-- Right — Form -->
@@ -316,11 +316,11 @@ OrgVein helps organizations improve processes, systems, and performance through 
                 <p class="form-card-sub">fill out the form & we'll get back to you</p>
 
                 {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-success mb-3">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
+                {% for message in messages %}
+                <div class="alert alert-success mb-3">
+                    {{ message }}
+                </div>
+                {% endfor %}
                 {% endif %}
 
                 <form method="post" id="diagnosisForm">
@@ -331,7 +331,7 @@ OrgVein helps organizations improve processes, systems, and performance through 
                         <label class="form-label-custom">FULL NAME</label>
                         <input type="text" name="full_name" class="form-input-custom"
                                placeholder="Your full name" required
-                               value="{{ diagnosis_form.full_name.value|default:'' }}" />
+                               value="{{ diagnosis_form.full_name.value|default:'' }}"/>
                     </div>
 
                     <!-- Phone + Email -->
@@ -340,13 +340,13 @@ OrgVein helps organizations improve processes, systems, and performance through 
                             <label class="form-label-custom">PHONE</label>
                             <input type="tel" name="phone" class="form-input-custom"
                                    placeholder="+91 ..."
-                                   value="{{ diagnosis_form.phone.value|default:'' }}" />
+                                   value="{{ diagnosis_form.phone.value|default:'' }}"/>
                         </div>
                         <div class="col-6">
                             <label class="form-label-custom">EMAIL</label>
                             <input type="email" name="email" class="form-input-custom"
                                    placeholder="you@company.com" required
-                                   value="{{ diagnosis_form.email.value|default:'' }}" />
+                                   value="{{ diagnosis_form.email.value|default:'' }}"/>
                         </div>
                     </div>
 
@@ -368,7 +368,8 @@ OrgVein helps organizations improve processes, systems, and performance through 
                     </div>
 
                     <div class="form-group-custom mb-4">
-                        <label class="form-label-custom">MESSAGE <span style="color:#aaa;font-weight:400;letter-spacing:0;">(Optional)</span></label>
+                        <label class="form-label-custom">MESSAGE <span
+                                style="color:#aaa;font-weight:400;letter-spacing:0;">(Optional)</span></label>
                         <textarea name="message" class="form-input-custom"
                                   placeholder="Tell us about your business challenge..."
                                   rows="3"></textarea>
@@ -383,5 +384,32 @@ OrgVein helps organizations improve processes, systems, and performance through 
 
     </div>
 </section>
+
+{% block extra_head %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Business Architecture?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Business Architecture is a disciplined approach to creating structured, scalable, and efficient organizational blueprints aligning strategy with execution."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does OrgVein help SMEs in Kerala?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OrgVein helps growth-focused small and medium enterprises build systems, optimize operations, and implement technology solutions like ERP and CRM."
+                }
+            }
+        ]
+    }
+</script>
+{% endblock %}
 
 {% endblock %}
