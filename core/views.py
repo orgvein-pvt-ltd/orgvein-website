@@ -5,6 +5,7 @@ from django.contrib import messages
 from .forms import DiagnosisForm
 from .services import SERVICES
 from .utils import send_to_odoo_crm
+from django.http import HttpResponse
 
 
 def diagnosis_view(request):
@@ -274,3 +275,43 @@ class ContactView(TemplateView):
                 self.get_context_data(form=DiagnosisForm())
             )
         return self.render_to_response(self.get_context_data(form=form))
+
+
+class PrivacyPolicyView(TemplateView):
+    template_name = "base.html"  # Direct aayi base template kaanikunnu
+
+
+class TermsOfServiceView(TemplateView):
+    template_name = "base.html"  # Direct aayi base template kaanikunnu
+
+
+def xml_sitemap_view(request):
+    """
+    Dynamic XML Sitemap Generator using services keys
+    """
+    static_urls = [
+        '/',
+        '/about',
+        '/services',
+        '/contact',
+        '/privacy-policy',
+        '/terms-of-service',
+    ]
+
+    # Ningalude file-ilulla SERVICES-il ninnum slugs dynamic aayi edukunnu
+    for slug in SERVICES.keys():
+        static_urls.append(f'/services/{slug}/')
+
+    sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+
+    for url in static_urls:
+        sitemap_xml += '  <url>\n'
+        sitemap_xml += f'    <loc>https://orgvein.com{url}</loc>\n'
+        sitemap_xml += '    <changefreq>monthly</changefreq>\n'
+        sitemap_xml += '    <priority>0.8</priority>\n'
+        sitemap_xml += '  </url>\n'
+
+    sitemap_xml += '</urlset>'
+
+    return HttpResponse(sitemap_xml, content_type="text/xml")
